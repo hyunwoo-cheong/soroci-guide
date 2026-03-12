@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>정은님 현장 가이드 | SOROCI Cosmoprof</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #FAF9F7;
+  --card: #FFFFFF;
+  --teal: #0D9488;
+  --teal-light: #CCFBF1;
+  --teal-dark: #115E59;
+  --red: #DC2626;
+  --red-light: #FEF2F2;
+  --red-border: #FECACA;
+  --amber: #D97706;
+  --amber-light: #FFFBEB;
+  --purple: #7C3AED;
+  --purple-light: #F5F3FF;
+  --stone-50: #FAFAF9;
+  --stone-100: #F5F5F4;
+  --stone-200: #E7E5E4;
+  --stone-300: #D6D3D1;
+  --stone-400: #A8A29E;
+  --stone-500: #78716C;
+  --stone-600: #57534E;
+  --stone-700: #44403C;
+  --stone-800: #292524;
+  --stone-900: #1C1917;
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.04);
+  --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-md: 0 4px 6px rgba(0,0,0,0.05), 0 2px 4px rgba(0,0,0,0.04);
+  --radius: 12px;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+
+body {
+  font-family: 'Noto Sans KR', 'DM Sans', sans-serif;
+  background: var(--bg);
+  color: var(--stone-800);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== HEADER ===== */
+.header {
+  padding: 16px;
+  text-align: center;
+  border-bottom: 1px solid var(--stone-200);
+  background: var(--card);
+}
+.header h1 {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--stone-900);
+  letter-spacing: -0.02em;
+}
+.header p {
+  font-size: 12px;
+  color: var(--stone-500);
+  margin-top: 2px;
+}
+
+/* ===== TAB NAV ===== */
+.tab-nav {
+  display: flex;
+  background: var(--card);
+  border-bottom: 1px solid var(--stone-200);
+  position: sticky;
+  top: 0;
+  z-index: 90;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.tab-nav::-webkit-scrollbar { display: none; }
+.tab-btn {
+  flex: 1;
+  min-width: 0;
+  padding: 12px 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--stone-400);
+  background: none;
+  border: none;
+  border-bottom: 2.5px solid transparent;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s;
+  font-family: inherit;
+}
+.tab-btn.active {
+  color: var(--teal);
+  border-bottom-color: var(--teal);
+}
+
+/* ===== CONTENT AREA ===== */
+.tab-content { display: none; padding: 16px; padding-bottom: 80px; }
+.tab-content.active { display: block; }
+
+/* ===== TAB 1: CONSULTATION FLOW ===== */
+.step-card {
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin-bottom: 12px;
+  overflow: hidden;
+  border: 1px solid var(--stone-100);
+}
+.step-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px;
+  cursor: pointer;
+  user-select: none;
+}
+.step-badge {
+  background: var(--teal);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 6px;
+  letter-spacing: 0.03em;
+  flex-shrink: 0;
+}
+.step-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--stone-800);
+  flex: 1;
+}
+.step-chevron {
+  font-size: 14px;
+  color: var(--stone-400);
+  transition: transform 0.2s;
+  flex-shrink: 0;
+}
+.step-card.open .step-chevron { transform: rotate(180deg); }
+.step-body {
+  display: none;
+  padding: 0 16px 16px;
+}
+.step-card.open .step-body { display: block; }
+.step-goal {
+  font-size: 12px;
+  color: var(--stone-500);
+  margin-bottom: 10px;
+  padding-left: 10px;
+  border-left: 2px solid var(--stone-300);
+}
+.eng-block {
+  background: var(--stone-900);
+  color: #F5F5F4;
+  padding: 12px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  line-height: 1.6;
+  margin-bottom: 8px;
+}
+.kor-block {
+  font-size: 13px;
+  color: var(--stone-600);
+  padding-left: 12px;
+  border-left: 2px solid var(--teal-light);
+  line-height: 1.5;
+}
+
+/* Matching table in step 3 */
+.match-table {
+  width: 100%;
+  font-size: 13px;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+.match-table th {
+  text-align: left;
+  font-weight: 600;
+  color: var(--stone-600);
+  padding: 6px 8px;
+  border-bottom: 1px solid var(--stone-200);
+  font-size: 12px;
+}
+.match-table td {
+  padding: 6px 8px;
+  border-bottom: 1px solid var(--stone-100);
+  vertical-align: top;
+}
+.match-table td:first-child { color: var(--teal-dark); font-weight: 600; }
+
+/* ===== TAB 2: SAMPLE COUNTER ===== */
+.sample-rule {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 16px;
+  box-shadow: var(--shadow);
+  margin-bottom: 16px;
+  border: 1px solid var(--stone-100);
+}
+.sample-rule h3 {
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: var(--stone-800);
+}
+.rule-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--stone-100);
+  font-size: 13px;
+}
+.rule-row:last-child { border-bottom: none; }
+.rule-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.rule-dot.red { background: var(--red); }
+.rule-dot.amber { background: var(--amber); }
+.rule-dot.green { background: var(--teal); }
+.rule-label { font-weight: 600; min-width: 70px; }
+.rule-desc { color: var(--stone-600); flex: 1; }
+
+.counter-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.counter-card {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 20px 16px;
+  box-shadow: var(--shadow);
+  text-align: center;
+  border: 1px solid var(--stone-100);
+}
+.counter-card h4 {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--stone-600);
+  margin-bottom: 8px;
+}
+.counter-num {
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--teal-dark);
+  font-family: 'DM Sans', sans-serif;
+  line-height: 1;
+  margin-bottom: 12px;
+  transition: color 0.2s;
+}
+.counter-num.low { color: var(--red); }
+.counter-btns {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+.counter-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid var(--stone-200);
+  background: var(--card);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--stone-700);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s;
+  font-family: 'DM Sans', sans-serif;
+}
+.counter-btn:active {
+  background: var(--teal-light);
+  border-color: var(--teal);
+  transform: scale(0.95);
+}
+.counter-btn.minus { color: var(--red); border-color: var(--red-border); }
+.counter-btn.minus:active { background: var(--red-light); }
+
+.counter-total {
+  margin-top: 12px;
+  font-size: 12px;
+  color: var(--stone-500);
+}
+
+.reset-btn {
+  display: block;
+  width: 100%;
+  margin-top: 16px;
+  padding: 12px;
+  background: var(--stone-100);
+  border: 1px solid var(--stone-200);
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--stone-600);
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.15s;
+}
+.reset-btn:active { background: var(--stone-200); }
+
+/* ===== TAB 3: PRODUCT PITCHES ===== */
+.line-card {
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin-bottom: 12px;
+  overflow: hidden;
+  border: 1px solid var(--stone-100);
+}
+.line-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px;
+  cursor: pointer;
+  user-select: none;
+}
+.line-icon {
+  font-size: 22px;
+  flex-shrink: 0;
+}
+.line-info { flex: 1; }
+.line-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--stone-800);
+}
+.line-sub {
+  font-size: 12px;
+  color: var(--stone-500);
+  margin-top: 1px;
+}
+.line-chevron {
+  font-size: 14px;
+  color: var(--stone-400);
+  transition: transform 0.2s;
+  flex-shrink: 0;
+}
+.line-card.open .line-chevron { transform: rotate(180deg); }
+.line-body {
+  display: none;
+  padding: 0 16px 16px;
+}
+.line-card.open .line-body { display: block; }
+.line-pitch {
+  background: var(--stone-900);
+  color: #F5F5F4;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+.line-ingredient {
+  font-size: 12px;
+  color: var(--teal-dark);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.prod-list {
+  font-size: 12px;
+  color: var(--stone-600);
+  line-height: 1.7;
+}
+.prod-item {
+  padding: 4px 0;
+  border-bottom: 1px solid var(--stone-50);
+}
+.prod-item:last-child { border: none; }
+.prod-name { font-weight: 600; color: var(--stone-700); }
+.prod-pitch-short { color: var(--stone-500); }
+.new-badge {
+  display: inline-block;
+  background: var(--amber);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 1px 5px;
+  border-radius: 4px;
+  margin-left: 4px;
+  vertical-align: middle;
+}
+.ipsy-badge {
+  display: inline-block;
+  background: var(--purple);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 1px 5px;
+  border-radius: 4px;
+  margin-left: 4px;
+  vertical-align: middle;
+}
+
+/* ===== TAB 4: FAQ ===== */
+.faq-card {
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin-bottom: 10px;
+  overflow: hidden;
+  border: 1px solid var(--stone-100);
+}
+.faq-q {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 16px;
+  cursor: pointer;
+  user-select: none;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--stone-800);
+  line-height: 1.4;
+}
+.faq-q span:first-child {
+  color: var(--teal);
+  font-weight: 800;
+  flex-shrink: 0;
+}
+.faq-chevron {
+  font-size: 14px;
+  color: var(--stone-400);
+  transition: transform 0.2s;
+  flex-shrink: 0;
+  margin-left: auto;
+}
+.faq-card.open .faq-chevron { transform: rotate(180deg); }
+.faq-a {
+  display: none;
+  padding: 0 16px 16px;
+}
+.faq-card.open .faq-a { display: block; }
+.faq-eng {
+  background: var(--stone-900);
+  color: #F5F5F4;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+.faq-kor {
+  font-size: 12px;
+  color: var(--stone-600);
+  line-height: 1.6;
+  padding-left: 12px;
+  border-left: 2px solid var(--teal-light);
+}
+
+.info-box {
+  background: var(--amber-light);
+  border: 1px solid var(--amber);
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 12px;
+  color: var(--stone-800);
+  margin-top: 16px;
+  line-height: 1.5;
+}
+.info-box strong { color: var(--amber); }
+
+/* ===== THE 3 PILLARS ===== */
+.pillars-container {
+  margin-bottom: 24px;
+}
+.pillars-header {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--stone-900);
+  margin-bottom: 4px;
+}
+.pillars-desc {
+  font-size: 12px;
+  color: var(--stone-500);
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+.pillars-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.pillar-card {
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 14px 16px;
+  border: 1px solid var(--stone-100);
+  border-left: 4px solid var(--stone-300);
+  display: flex;
+  flex-direction: column;
+}
+.pillar-card.rd { border-left-color: var(--teal); }
+.pillar-card.ipsy { border-left-color: var(--purple); }
+.pillar-card.micro { border-left-color: var(--amber); }
+
+.pillar-header-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+.pillar-icon { font-size: 20px; }
+.pillar-title { font-size: 14px; font-weight: 700; color: var(--stone-800); letter-spacing: -0.02em;}
+.pillar-eng { font-size: 12px; font-weight: 500; color: var(--stone-600); margin-bottom: 6px; font-family: 'DM Sans', sans-serif; line-height: 1.4;}
+.pillar-kor { font-size: 11px; color: var(--stone-500); line-height: 1.5; word-break: keep-all;}
+
+/* ===== UTILITIES ===== */
+@media (min-width: 600px) {
+  .tab-content { max-width: 540px; margin: 0 auto; }
+}
+
+/* ===== CUSTOM MODAL ===== */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.modal-overlay.active {
+  display: flex;
+  opacity: 1;
+}
+.modal-box {
+  background: var(--card);
+  padding: 24px;
+  border-radius: var(--radius);
+  width: 80%;
+  max-width: 320px;
+  text-align: center;
+  box-shadow: var(--shadow-md);
+  transform: scale(0.95);
+  transition: transform 0.2s;
+}
+.modal-overlay.active .modal-box {
+  transform: scale(1);
+}
+.modal-box p {
+  margin-bottom: 24px;
+  font-weight: 600;
+  color: var(--stone-800);
+  font-size: 15px;
+}
+.modal-actions {
+  display: flex;
+  gap: 12px;
+}
+.modal-btn {
+  flex: 1;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-family: inherit;
+  font-size: 14px;
+  transition: background 0.15s;
+}
+.modal-btn.cancel {
+  background: var(--stone-200);
+  color: var(--stone-700);
+}
+.modal-btn.cancel:active { background: var(--stone-300); }
+.modal-btn.confirm {
+  background: var(--teal);
+  color: #fff;
+}
+.modal-btn.confirm:active { background: var(--teal-dark); }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <h1>SOROCI 현장 가이드</h1>
+  <p>Cosmoprof Bologna 2026 · 박람회 가이드</p>
+</div>
+
+<!-- TAB NAV -->
+<div class="tab-nav" id="tabNav">
+  <button class="tab-btn active" data-tab="flow">상담 플로우</button>
+  <button class="tab-btn" data-tab="sample">샘플/판매</button>
+  <button class="tab-btn" data-tab="product">제품 피치</button>
+  <button class="tab-btn" data-tab="faq">FAQ</button>
+  <button class="tab-btn" data-tab="notice">참고사항</button>
+</div>
+
+<!-- TAB 1: CONSULTATION FLOW -->
+<div class="tab-content active" id="tab-flow">
+
+  <!-- THE 3 PILLARS -->
+  <div class="pillars-container">
+    <div class="pillars-header">브랜드 핵심 무기 (The 3 Pillars)</div>
+    <div class="pillars-desc">바이어에게 가장 먼저 각인시켜야 할 소로시의 3대 경쟁력입니다.</div>
+    <div class="pillars-list">
+      <div class="pillar-card rd">
+        <div class="pillar-header-row">
+          <div class="pillar-icon">🏭</div>
+          <div class="pillar-title">100% 자체 제조 (In-House)</div>
+        </div>
+        <div class="pillar-eng">"Directly manufactured in-house for top quality and pricing."</div>
+        <div class="pillar-kor">원료 추출부터 포장까지 자체 공장 원스톱 생산. 완벽한 품질 관리와 뛰어난 단가 경쟁력 제공.</div>
+      </div>
+      <div class="pillar-card ipsy">
+        <div class="pillar-header-row">
+          <div class="pillar-icon">⭐</div>
+          <div class="pillar-title">북미 소비자 검증 (30만+)</div>
+        </div>
+        <div class="pillar-eng">"Voted Top Skincare by 300K+ US IPSY consumers."</div>
+        <div class="pillar-kor">단순 수출이 아닌, 까다로운 미국 30만 명 블라인드 테스터가 선택한 보습/아이크림 1위.</div>
+      </div>
+      <div class="pillar-card micro">
+        <div class="pillar-header-row">
+          <div class="pillar-icon">✨</div>
+          <div class="pillar-title">독자 제형 & 압도적 사용감</div>
+        </div>
+        <div class="pillar-eng">"Proprietary formula: Fast-absorbing, deep hydration, and perfect adherence."</div>
+        <div class="pillar-kor">직접 제조로 완성한 민감성 특화 제형. ① 끈적임 없는 빠른 흡수 ② 겉돌지 않는 고보습 ③ 완벽한 피부 밀착.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="step-card open" data-step>
+    <div class="step-header">
+      <span class="step-badge">STEP 1</span>
+      <span class="step-title">첫인사 (Hook)</span>
+      <span class="step-chevron">▾</span>
+    </div>
+    <div class="step-body">
+      <div class="step-goal">목적: 지나가는 바이어의 발걸음을 멈추게 하는 10초 엘리베이터 피치</div>
+      <div class="eng-block">"Hi, we're SOROCI — a premium skincare brand from Korea. We manufacture everything in-house, from extraction to packaging."</div>
+      <div class="kor-block">SOROCI입니다. 원료 추출부터 포장까지 100% 자체 제조하는 K-뷰티 브랜드입니다.</div>
+    </div>
+  </div>
+
+  <div class="step-card" data-step>
+    <div class="step-header">
+      <span class="step-badge">STEP 2</span>
+      <span class="step-title">니즈 파악 (Questioning)</span>
+      <span class="step-chevron">▾</span>
+    </div>
+    <div class="step-body">
+      <div class="step-goal">목적: 바이어의 타겟 고객층과 관심 카테고리 파악</div>
+      <div class="eng-block">"What kind of products are you looking for?"<br>"Who is your main customer? Sensitive skin? Anti-aging? Brightening?"</div>
+      <div class="kor-block">어떤 제품 찾고 계세요? 주요 고객층이 어떻게 되세요? 민감성? 안티에이징? 브라이트닝?</div>
+    </div>
+  </div>
+
+  <div class="step-card" data-step>
+    <div class="step-header">
+      <span class="step-badge">STEP 3</span>
+      <span class="step-title">맞춤 제안 (Matching)</span>
+      <span class="step-chevron">▾</span>
+    </div>
+    <div class="step-body">
+      <div class="step-goal">목적: 바이어 니즈에 따른 5개 라인 중 매칭 제안</div>
+      <div class="eng-block">"Based on your needs, I'd recommend our [Line Name]. For brightening, our new Vita-C Intensive Serum is a great fit."</div>
+      <div class="kor-block">니즈에 맞춰 [라인명]을 추천합니다.</div>
+      <table class="match-table">
+        <tr><th>바이어 니즈</th><th>추천 라인</th></tr>
+        <tr><td>민감성 / 트러블</td><td>Derma Lab 또는 Organic Rice</td></tr>
+        <tr><td>브라이트닝</td><td>Vita Tangerine (Vita-C Serum 강조)</td></tr>
+        <tr><td>안티에이징</td><td>Morning Drizzle</td></tr>
+        <tr><td>기초 풀라인</td><td>Organic Rice</td></tr>
+        <tr><td>두피 / 헤어</td><td>Marine Bio</td></tr>
+        <tr><td>검증된 베스트셀러</td><td>Water Drop, Tangerine Serum, Vita-C Serum</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="step-card" data-step>
+    <div class="step-header">
+      <span class="step-badge">STEP 4</span>
+      <span class="step-title">실적 펀치 (Proof)</span>
+      <span class="step-chevron">▾</span>
+    </div>
+    <div class="step-body">
+      <div class="step-goal">목적: 바이어 성향을 파악하여 맞춤형 데이터 제시 (택 1)</div>
+      
+      <div style="margin-bottom: 16px;">
+        <div style="font-size: 12px; font-weight: 800; color: var(--purple); margin-bottom: 6px;">🛒 유통/리테일 바이어라면 (IPSY 판매량 강조)</div>
+        <div class="eng-block" style="margin-bottom: 6px;">"Tested by over 300,000 US consumers, voted Top Moisturizer & Best Eye Cream on IPSY."</div>
+        <div class="kor-block">미국 30만 명 블라인드 테스트 결과, 보습/아이크림 1위로 선정된 검증된 브랜드입니다.</div>
+      </div>
+      
+      <div>
+        <div style="font-size: 12px; font-weight: 800; color: var(--teal-dark); margin-bottom: 6px;">💡 제품력/효능 관심 바이어라면 (독자 제형 팩트 폭격)</div>
+        <div class="eng-block" style="margin-bottom: 6px;">"Because we manufacture in-house, our proprietary formula offers fast absorption, deep hydration, and perfect adherence for sensitive skin."</div>
+        <div class="kor-block">직접 제조하기에 가능한 독자 제형입니다. 민감한 피부에 확실한 효과를 주며 1) 끈적임 없는 빠른 흡수 2) 겉돌지 않는 고보습 3) 피부에 완벽히 딱 밀착됩니다.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="step-card" data-step>
+    <div class="step-header">
+      <span class="step-badge">STEP 5</span>
+      <span class="step-title">클로징 (Next Step)</span>
+      <span class="step-chevron">▾</span>
+    </div>
+    <div class="step-body">
+      <div class="step-goal">목적: 명함 확보 + 샘플 발송 약속</div>
+      <div class="eng-block">"Can I get your business card for follow-up?"<br>"Would you like us to send some samples?"</div>
+      <div class="kor-block">연락처 받을 수 있을까요? 샘플 보내드릴까요?</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- TAB 2: SAMPLE MANAGEMENT -->
+<div class="tab-content" id="tab-sample">
+
+  <div class="sample-rule">
+    <h3>샘플 배분 기준</h3>
+    <div class="rule-row">
+      <div class="rule-dot red"></div>
+      <div class="rule-label">단순 방문</div>
+      <div class="rule-desc">샘플 없음 — 카탈로그만 제공</div>
+    </div>
+    <div class="rule-row">
+      <div class="rule-dot amber"></div>
+      <div class="rule-label">일반 바이어</div>
+      <div class="rule-desc">마스크팩 1개 (명함 교환 필수)</div>
+    </div>
+    <div class="rule-row">
+      <div class="rule-dot green"></div>
+      <div class="rule-label">핵심 바이어</div>
+      <div class="rule-desc">약 5종 (각 라인 1~2개) + 마스크팩 + 아이크림 (심층 상담)</div>
+    </div>
+    <div class="rule-row" style="margin-top: 8px; padding-top: 8px; border-top: 1px dashed var(--stone-200);">
+      <div class="rule-label" style="color: var(--purple);">🎉 이벤트</div>
+      <div class="rule-desc">인스타 팔로우 시 <strong>마스크팩 1개</strong> 증정</div>
+    </div>
+  </div>
+
+  <h3 style="font-size:14px; font-weight:700; margin-bottom:12px; color:var(--stone-800);">잔여 수량 카운터</h3>
+
+  <div class="counter-grid">
+    <div class="counter-card">
+      <h4>아이크림</h4>
+      <div class="counter-num" id="eyeCount">120</div>
+      <div class="counter-btns">
+        <button class="counter-btn minus" onclick="adjustCount('eye', -1)">−</button>
+        <button class="counter-btn" onclick="adjustCount('eye', 1)">+</button>
+      </div>
+      <div class="counter-total">배포: <span id="eyeGiven">0</span>개</div>
+    </div>
+    <div class="counter-card">
+      <h4>마스크팩</h4>
+      <div class="counter-num" id="maskCount">200</div>
+      <div class="counter-btns">
+        <button class="counter-btn minus" onclick="adjustCount('mask', -1)">−</button>
+        <button class="counter-btn" onclick="adjustCount('mask', 1)">+</button>
+      </div>
+      <div class="counter-total">배포: <span id="maskGiven">0</span>개</div>
+    </div>
+  </div>
+
+  <button class="reset-btn" onclick="openResetModal()">수량 초기화 (120 / 200)</button>
+
+  <div class="info-box">
+    <strong>💡 아이크림(총 120개) 현장 운영 팁</strong><br>
+    • 마지막 날 비공식적으로 <strong>2유로</strong>에 판매 가능<br>
+    • 또는 다른 제품 2~3개 구매 시 끼워넣기(서비스 증정) 가능
+  </div>
+
+</div>
+
+<!-- TAB 3: PRODUCT PITCHES -->
+<div class="tab-content" id="tab-product">
+
+  <!-- NEW: Vita-C Intensive Serum -->
+  <div class="line-card open" data-line>
+    <div class="line-header">
+      <span class="line-icon">✨</span>
+      <div class="line-info">
+        <div class="line-name">NEW — Vita-C Intensive Serum</div>
+        <div class="line-sub">브라이트닝 + 안티에이징</div>
+      </div>
+      <span class="line-chevron">▾</span>
+    </div>
+    <div class="line-body">
+      <div class="line-pitch">"Our newest serum with Triple Vitamin C Complex — brightening, anti-aging, and hydration in one, without irritation."</div>
+      <div class="line-ingredient">핵심: Triple Vitamin C (Ascorbic Acid + Ethyl Ascorbic Acid + Sodium Ascorbyl Phosphate) + 알로에 베라 + 후코이단 + 히알루론산</div>
+      <div class="prod-list">
+        <div class="prod-item"><span class="prod-name">Vita-C Intensive Serum</span> <span class="new-badge">NEW</span> <span class="ipsy-badge">IPSY</span><br><span class="prod-pitch-short">트리플 비타민C, 최근 IPSY 입점, 브라이트닝+안티에이징</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LINE 1: Organic Rice -->
+  <div class="line-card" data-line>
+    <div class="line-header">
+      <span class="line-icon">🌾</span>
+      <div class="line-info">
+        <div class="line-name">Organic Rice</div>
+        <div class="line-sub">기초 스킨케어 풀라인 (7종)</div>
+      </div>
+      <span class="line-chevron">▾</span>
+    </div>
+    <div class="line-body">
+      <div class="line-pitch">"Full skincare line from basics to BB cream, all hypoallergenic tested."</div>
+      <div class="line-ingredient">핵심: 쌀눈 (Rice Germ) — 쌀 영양 66% 집약</div>
+      <div class="prod-list">
+        <div class="prod-item"><span class="prod-name">Soothing Skin Toner</span><br><span class="prod-pitch-short">세안 후 pH 밸런스, 피부결 정돈</span></div>
+        <div class="prod-item"><span class="prod-name">Repair Skin Softener</span><br><span class="prod-pitch-short">밀키 텍스처, 건조 피부 영양 공급</span></div>
+        <div class="prod-item"><span class="prod-name">Mild Lotion</span><br><span class="prod-pitch-short">산뜻한 고보습, 세라마이드 함유</span></div>
+        <div class="prod-item"><span class="prod-name">NMF Serum</span><br><span class="prod-pitch-short">천연보습인자(NMF), 여드름 피부 OK</span></div>
+        <div class="prod-item"><span class="prod-name">Calming Essence</span><br><span class="prod-pitch-short">즉각 수분, 민감 피부 진정</span></div>
+        <div class="prod-item"><span class="prod-name">Recovery BB Cream</span><br><span class="prod-pitch-short">천연 색소 특허, 자연스러운 커버</span></div>
+        <div class="prod-item"><span class="prod-name">Protection Sun Cream</span><br><span class="prod-pitch-short">저자극 자외선 차단</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LINE 2: Morning Drizzle -->
+  <div class="line-card" data-line>
+    <div class="line-header">
+      <span class="line-icon">💧</span>
+      <div class="line-info">
+        <div class="line-name">Morning Drizzle</div>
+        <div class="line-sub">IPSY Best Seller (3종)</div>
+      </div>
+      <span class="line-chevron">▾</span>
+    </div>
+    <div class="line-body">
+      <div class="line-pitch">"Our best-selling line in the US, proven by IPSY consumers with a 4.2 rating."</div>
+      <div class="line-ingredient">핵심: 아로니아 (King's Berry) — 비타민C 대비 20배 항산화</div>
+      <div class="prod-list">
+        <div class="prod-item"><span class="prod-name">Water Drop Moisturizer</span> <span class="ipsy-badge">IPSY</span><br><span class="prod-pitch-short">물방울 텍스처, 24시간 보습, 4.2점/30만 테스터</span></div>
+        <div class="prod-item"><span class="prod-name">Calming Cream</span> <span class="ipsy-badge">IPSY</span><br><span class="prod-pitch-short">K-Beauty 보습 1위, 진정+보습 동시</span></div>
+        <div class="prod-item"><span class="prod-name">Bucket Mist</span><br><span class="prod-pitch-short">즉각 쿨링, 메이크업 위에도 OK</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LINE 3: Vita Tangerine -->
+  <div class="line-card" data-line>
+    <div class="line-header">
+      <span class="line-icon">🍊</span>
+      <div class="line-info">
+        <div class="line-name">Vita Tangerine</div>
+        <div class="line-sub">브라이트닝 + 비타민C (5종)</div>
+      </div>
+      <span class="line-chevron">▾</span>
+    </div>
+    <div class="line-body">
+      <div class="line-pitch">"Vitamin C intensive line using Jeju Green Tangerine for brightening and anti-aging."</div>
+      <div class="line-ingredient">핵심: 제주 청귤 — 1년 중 4주만 수확, 고농축 비타민C</div>
+      <div class="prod-list">
+        <div class="prod-item"><span class="prod-name">Vita-C Intensive Serum</span> <span class="new-badge">NEW</span> <span class="ipsy-badge">IPSY</span><br><span class="prod-pitch-short">트리플 비타민C, 최근 IPSY 입점, 브라이트닝+안티에이징</span></div>
+        <div class="prod-item"><span class="prod-name">Toning Serum</span><br><span class="prod-pitch-short">비타민C+베리 항산화, 브라이트닝</span></div>
+        <div class="prod-item"><span class="prod-name">Low-Hyaluronic Booster Serum</span> <span class="ipsy-badge">IPSY</span><br><span class="prod-pitch-short">잡티 개선, 저분자 히알루론산, 30만 테스터</span></div>
+        <div class="prod-item"><span class="prod-name">Spotlight Eye Cream</span> <span class="ipsy-badge">IPSY</span><br><span class="prod-pitch-short">IPSY 아이크림 1위 4.3점, 다크서클 케어</span></div>
+        <div class="prod-item"><span class="prod-name">Vita-Tangerine Fit Mask</span><br><span class="prod-pitch-short">2단계 마스크, 즉각 브라이트닝</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LINE 4: Derma Lab -->
+  <div class="line-card" data-line>
+    <div class="line-header">
+      <span class="line-icon">🌿</span>
+      <div class="line-info">
+        <div class="line-name">Derma Lab</div>
+        <div class="line-sub">트러블 / 민감성 전문 (4종)</div>
+      </div>
+      <span class="line-chevron">▾</span>
+    </div>
+    <div class="line-body">
+      <div class="line-pitch">"Specialized for sensitive and acne-prone skin, dermatologist tested."</div>
+      <div class="line-ingredient">핵심: 오리엔탈 허브 + Derma Max AC Complex™</div>
+      <div class="prod-list">
+        <div class="prod-item"><span class="prod-name">Herbal Eeje Soap</span><br><span class="prod-pitch-short">1999년 오리지널 처방, 트러블 케어 원조</span></div>
+        <div class="prod-item"><span class="prod-name">Herbal Calming Mist</span><br><span class="prod-pitch-short">SOS 진정 미스트, 붉은기 즉각 완화</span></div>
+        <div class="prod-item"><span class="prod-name">Herbal Soothing Toner Pad</span><br><span class="prod-pitch-short">각질 정돈 + 진정 동시에</span></div>
+        <div class="prod-item"><span class="prod-name">Intensive Foaming Cleanser</span><br><span class="prod-pitch-short">약산성, 민감 피부 전용 클렌저</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LINE 5: Marine Bio -->
+  <div class="line-card" data-line>
+    <div class="line-header">
+      <span class="line-icon">🌊</span>
+      <div class="line-info">
+        <div class="line-name">Marine Bio</div>
+        <div class="line-sub">두피 & 헤어 케어 (3종)</div>
+      </div>
+      <span class="line-chevron">▾</span>
+    </div>
+    <div class="line-body">
+      <div class="line-pitch">"Extended to scalp and hair care with marine fucoidan technology."</div>
+      <div class="line-ingredient">핵심: 해조류 & 후코이단 — 두피 자생력 강화</div>
+      <div class="prod-list">
+        <div class="prod-item"><span class="prod-name">Active Shampoo</span><br><span class="prod-pitch-short">두피 클렌징 + 모근 영양</span></div>
+        <div class="prod-item"><span class="prod-name">Active Hair Tonic</span><br><span class="prod-pitch-short">두피 쿨링, 탈모 예방 케어</span></div>
+        <div class="prod-item"><span class="prod-name">Fucoidan Peeling & Soothing Pad Set</span><br><span class="prod-pitch-short">2단계 패드, 각질 제거 후 진정</span></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- TAB 4: FAQ -->
+<div class="tab-content" id="tab-faq">
+
+  <div class="faq-card open" data-faq>
+    <div class="faq-q"><span>Q1</span> 자체 공장이 있나요?<span class="faq-chevron">▾</span></div>
+    <div class="faq-a">
+      <div class="faq-eng">"Yes. We have our own R&D center and manufacturing facility. From raw material extraction to filling and packaging — it's all done in-house. That's how we control quality and keep pricing competitive."</div>
+      <div class="faq-kor">네, 자체 R&D 센터와 제조 시설을 보유하고 있습니다. 원료 추출부터 충진, 포장까지 100% In-house로 진행합니다.</div>
+    </div>
+  </div>
+
+  <div class="faq-card" data-faq>
+    <div class="faq-q"><span>Q2</span> 가장 큰 차별점은?<span class="faq-chevron">▾</span></div>
+    <div class="faq-a">
+      <div class="faq-eng">"Our proprietary formulation. Because we manufacture in-house, we've perfected a formula that absorbs quickly without stickiness, provides deep hydration, and adheres perfectly to the skin."</div>
+      <div class="faq-kor">직접 제조하기 때문에 가능한 '독자적 제형'입니다. 민감한 피부에도 자극 없이 확실한 효과를 내며, 1) 끈적임 없는 빠른 흡수 2) 겉돌지 않는 고보습 3) 피부에 딱 밀착되는 완벽한 사용감이 가장 큰 무기입니다.</div>
+    </div>
+  </div>
+
+  <div class="faq-card" data-faq>
+    <div class="faq-q"><span>Q3</span> 리드타임은 얼마나?<span class="faq-chevron">▾</span></div>
+    <div class="faq-a">
+      <div class="faq-eng">"We're flexible since we have our own factory. Annual capacity is 2.8 million units, so we can handle large orders quickly and deliver at peak freshness."</div>
+      <div class="faq-kor">자체 공장이라 유연합니다. 연간 288만 개 생산 가능, 대규모 오더도 신속하게 가장 신선한 상태로 맞춰드립니다.</div>
+    </div>
+  </div>
+
+  <div class="faq-card" data-faq>
+    <div class="faq-q"><span>Q4</span> MOQ는 얼마인가요?<span class="faq-chevron">▾</span></div>
+    <div class="faq-a">
+      <div class="faq-eng">"It depends on the product and order size. Let's discuss specifics after the show — I can send you a detailed proposal with pricing tiers."</div>
+      <div class="faq-kor">제품과 물량에 따라 다릅니다. 전시 후 구체적인 제안서를 보내드리겠습니다. (단가/MOQ는 바이어가 먼저 물어볼 때만 대응!)</div>
+    </div>
+  </div>
+
+  <div class="faq-card" data-faq>
+    <div class="faq-q"><span>Q5</span> 미국 시장 실적은?<span class="faq-chevron">▾</span></div>
+    <div class="faq-a">
+      <div class="faq-eng">"Highly successful. We've been chosen by IPSY 8+ times. Our Calming Cream and Eye Cream were voted the best in the K-Beauty category by hundreds of thousands of users."</div>
+      <div class="faq-kor">IPSY에 8회 이상 선정되었습니다. 밀어내기식 수출이 아니라, 수십만 명의 실제 미국 소비자 블라인드 테스트에서 카밍크림과 아이크림이 1위로 꼽힌 검증된 제품입니다.</div>
+    </div>
+  </div>
+
+  <div class="faq-card" data-faq>
+    <div class="faq-q"><span>Q6</span> OEM/ODM 가능한가요?<span class="faq-chevron">▾</span></div>
+    <div class="faq-a">
+      <div class="faq-eng">"We focus on our own brand, but we're open to discussing private label or co-branded products for the right partner."</div>
+      <div class="faq-kor">자사 브랜드 중심이지만, 좋은 파트너라면 PB나 콜라보 제품도 논의 가능합니다.</div>
+    </div>
+  </div>
+
+  <div class="faq-card" data-faq>
+    <div class="faq-q"><span>Q7</span> 유럽 인증(CPNP)은 있나요?<span class="faq-chevron">▾</span></div>
+    <div class="faq-a">
+      <div class="faq-eng">"Yes, 15 out of our 23 products are already CPNP registered. We can provide all necessary EU compliance documents."</div>
+      <div class="faq-kor">네, 현재 총 23개 품목 중 15개 품목이 CPNP 등록 완료되어 있습니다. EU 규정 관련 서류 모두 즉시 제공 가능합니다.</div>
+    </div>
+  </div>
+
+  <div class="faq-card" data-faq>
+    <div class="faq-q"><span>Q8</span> 신제품은 뭔가요?<span class="faq-chevron">▾</span></div>
+    <div class="faq-a">
+      <div class="faq-eng">"Our Vita-C Intensive Serum — it has a Triple Vitamin C Complex for brightening, anti-aging, and hydration. Gentle enough for sensitive skin, clinically tested."</div>
+      <div class="faq-kor">Vita-C Intensive Serum입니다. 트리플 비타민C 복합체로 미백, 안티에이징, 보습을 동시에. 최근 IPSY에도 입점했습니다.</div>
+    </div>
+  </div>
+
+  <div class="faq-card" data-faq>
+    <div class="faq-q"><span>Q9</span> 독점(Exclusivity) 공급 가능한가요?<span class="faq-chevron">▾</span></div>
+    <div class="faq-a">
+      <div class="faq-eng">"It depends on the region and annual volume. Currently, Romania, Poland, Lithuania, Greece, and Germany are under exclusivity."</div>
+      <div class="faq-kor">지역과 연간 보장 물량에 따라 논의 가능합니다. 현재 독점 국가는 <strong>루마니아, 폴란드, 리투아니아, 그리스, 독일</strong>입니다.<br>
+      <span style="background: var(--red-light); color: var(--red); padding: 6px; border-radius: 6px; font-weight: 600; display: block; margin-top: 8px; line-height: 1.4;">💡 [내부 팁] 독일 바이어 응대:</span> 
+      <span style="color: var(--stone-600); display: block; margin-top: 4px; padding-left: 4px;">현재 독일은 소량 거래 중이라, 확실한 빅바이어가 있다면 갈아타기(전환)도 가능합니다. 무조건 거절하지 말고 긍정적으로 여지를 두며 유연하게 상담하세요!</span></div>
+    </div>
+  </div>
+
+</div>
+
+<!-- TAB 5: NOTICE (참고사항) -->
+<div class="tab-content" id="tab-notice">
+  <div class="sample-rule" style="border-top: 4px solid var(--teal);">
+    <h3 style="color: var(--teal-dark); margin-bottom: 16px; font-size: 15px;">💡 꼭 알아두면 좋은 현장 팁</h3>
+    <ul style="padding-left: 20px; font-size: 13px; color: var(--stone-800); line-height: 1.6;">
+      <li style="margin-bottom: 14px;">
+        <strong style="color: var(--stone-900);">명함은 즉시 메모 📝</strong><br>
+        <span style="color: var(--stone-600);">나중엔 누가 누군지 금방 까먹어요! 명함은 받는 즉시 상대방의 특징이나 대화 나눈 내용을 간단하게라도 꼭 적어주세요 ㅎㅎ</span>
+      </li>
+      <li style="margin-bottom: 14px;">
+        <strong style="color: var(--stone-900);">식사 및 자리 비움 🍱</strong><br>
+        <span style="color: var(--stone-600);">바이어가 언제 올지 모르니, 외부로 자리를 비우기보다는 교대로 부스 안쪽에서 간단히 식사해 주시면 정말 감사하겠습니다!</span>
+      </li>
+      <li>
+        <strong style="color: var(--stone-900);">가이드 활용법 🎯</strong><br>
+        <span style="color: var(--stone-600);">이 현장 가이드는 어디까지나 '참고용'입니다! 대본처럼 100% 똑같이 하실 필요 없으니, 핵심만 딱 짚고 정은님만의 자연스러운 스타일로 편하게 응대해 주시면 됩니다. 파이팅! 🥰</span>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!-- CUSTOM RESET MODAL -->
+<div id="confirmModal" class="modal-overlay">
+  <div class="modal-box">
+    <p>샘플 잔여 수량을<br>초기화하시겠습니까?</p>
+    <div class="modal-actions">
+      <button class="modal-btn cancel" onclick="closeModal()">취소</button>
+      <button class="modal-btn confirm" onclick="executeReset()">확인</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// TAB SWITCHING
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+  });
+});
+
+// ACCORDION: Steps
+document.querySelectorAll('[data-step] .step-header').forEach(h => {
+  h.addEventListener('click', () => h.parentElement.classList.toggle('open'));
+});
+
+// ACCORDION: Lines
+document.querySelectorAll('[data-line] .line-header').forEach(h => {
+  h.addEventListener('click', () => h.parentElement.classList.toggle('open'));
+});
+
+// ACCORDION: FAQ
+document.querySelectorAll('[data-faq] .faq-q').forEach(h => {
+  h.addEventListener('click', () => h.parentElement.classList.toggle('open'));
+});
+
+// SAMPLE COUNTERS
+const stock = { eye: 120, mask: 200 };
+const initial = { eye: 120, mask: 200 };
+const given = { eye: 0, mask: 0 };
+
+function adjustCount(type, delta) {
+  const newVal = stock[type] + delta;
+  if (newVal < 0 || newVal > initial[type]) return;
+  stock[type] = newVal;
+  given[type] = initial[type] - stock[type];
+  updateDisplay(type);
+}
+
+function updateDisplay(type) {
+  const el = document.getElementById(type === 'eye' ? 'eyeCount' : 'maskCount');
+  const gEl = document.getElementById(type === 'eye' ? 'eyeGiven' : 'maskGiven');
+  el.textContent = stock[type];
+  gEl.textContent = given[type];
+  el.classList.toggle('low', stock[type] <= 20);
+}
+
+// MODAL LOGIC FOR RESET
+function openResetModal() {
+  document.getElementById('confirmModal').classList.add('active');
+}
+
+function closeModal() {
+  document.getElementById('confirmModal').classList.remove('active');
+}
+
+function executeReset() {
+  stock.eye = initial.eye;
+  stock.mask = initial.mask;
+  given.eye = 0;
+  given.mask = 0;
+  updateDisplay('eye');
+  updateDisplay('mask');
+  closeModal();
+}
+</script>
+</body>
+</html>
