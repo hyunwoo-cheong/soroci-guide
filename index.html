@@ -45,7 +45,6 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* ===== HEADER ===== */
 .header {
   padding: 16px;
   text-align: center;
@@ -64,7 +63,6 @@ body {
   margin-top: 2px;
 }
 
-/* ===== TAB NAV ===== */
 .tab-nav {
   display: flex;
   background: var(--card);
@@ -96,11 +94,9 @@ body {
   border-bottom-color: var(--teal);
 }
 
-/* ===== CONTENT AREA ===== */
 .tab-content { display: none; padding: 16px; padding-bottom: 80px; }
 .tab-content.active { display: block; }
 
-/* ===== TAB 1: CONSULTATION FLOW ===== */
 .step-card {
   background: var(--card);
   border-radius: var(--radius);
@@ -171,7 +167,6 @@ body {
   line-height: 1.5;
 }
 
-/* Matching table in step 3 */
 .match-table {
   width: 100%;
   font-size: 13px;
@@ -193,7 +188,6 @@ body {
 }
 .match-table td:first-child { color: var(--teal-dark); font-weight: 600; }
 
-/* ===== TAB 2: SAMPLE COUNTER ===== */
 .sample-rule {
   background: var(--card);
   border-radius: var(--radius);
@@ -310,7 +304,6 @@ body {
 }
 .reset-btn:active { background: var(--stone-200); }
 
-/* ===== TAB 3: PRODUCT PITCHES ===== */
 .line-card {
   background: var(--card);
   border-radius: var(--radius);
@@ -406,7 +399,19 @@ body {
   vertical-align: middle;
 }
 
-/* ===== TAB 4: FAQ ===== */
+/* 내부 팁 박스 */
+.tip-box {
+  background: var(--amber-light);
+  border: 1px solid #FDE68A;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 12px;
+  color: var(--stone-700);
+  margin-top: 10px;
+  line-height: 1.6;
+}
+.tip-box strong { color: var(--amber); }
+
 .faq-card {
   background: var(--card);
   border-radius: var(--radius);
@@ -476,7 +481,6 @@ body {
 }
 .info-box strong { color: var(--amber); }
 
-/* ===== THE 3 PILLARS ===== */
 .pillars-container {
   margin-bottom: 24px;
 }
@@ -522,12 +526,10 @@ body {
 .pillar-eng { font-size: 12px; font-weight: 500; color: var(--stone-600); margin-bottom: 6px; font-family: 'DM Sans', sans-serif; line-height: 1.4;}
 .pillar-kor { font-size: 11px; color: var(--stone-500); line-height: 1.5; word-break: keep-all;}
 
-/* ===== UTILITIES ===== */
 @media (min-width: 600px) {
   .tab-content { max-width: 540px; margin: 0 auto; }
 }
 
-/* ===== CUSTOM MODAL ===== */
 .modal-overlay {
   display: none;
   position: fixed;
@@ -592,13 +594,11 @@ body {
 </head>
 <body>
 
-<!-- HEADER -->
 <div class="header">
   <h1>SOROCI 현장 가이드</h1>
   <p>Cosmoprof Bologna 2026 · 박람회 가이드</p>
 </div>
 
-<!-- TAB NAV -->
 <div class="tab-nav" id="tabNav">
   <button class="tab-btn active" data-tab="flow">상담 플로우</button>
   <button class="tab-btn" data-tab="sample">샘플/판매</button>
@@ -610,9 +610,8 @@ body {
 <!-- TAB 1: CONSULTATION FLOW -->
 <div class="tab-content active" id="tab-flow">
 
-  <!-- THE 3 PILLARS -->
   <div class="pillars-container">
-    <div class="pillars-header">브랜드 핵심 무기 (The 3 Pillars)</div>
+    <div class="pillars-header">브랜드 핵심 3가지 (The 3 Pillars)</div>
     <div class="pillars-desc">바이어에게 가장 먼저 각인시켜야 할 소로시의 3대 경쟁력입니다.</div>
     <div class="pillars-list">
       <div class="pillar-card rd">
@@ -626,17 +625,18 @@ body {
       <div class="pillar-card ipsy">
         <div class="pillar-header-row">
           <div class="pillar-icon">⭐</div>
-          <div class="pillar-title">북미 소비자 검증 (30만+)</div>
+          <div class="pillar-title">북미 소비자 검증 (1.5M+)</div>
         </div>
         <div class="pillar-eng">"Voted Top Skincare by 300K+ US IPSY consumers."</div>
         <div class="pillar-kor">단순 수출이 아닌, 까다로운 미국 30만 명 블라인드 테스터가 선택한 보습/아이크림 1위.</div>
+        <div class="tip-box" style="margin-top:8px;">💡 <strong>내부 참고</strong>: IPSY를 통해 미국 소비자에게 누적 1.5M개 이상 전달된 브랜드. 바이어에게 먼저 꺼내기보다, 신뢰도가 필요한 순간에 자연스럽게 활용하세요.</div>
       </div>
       <div class="pillar-card micro">
         <div class="pillar-header-row">
           <div class="pillar-icon">✨</div>
-          <div class="pillar-title">독자 제형 & 압도적 사용감</div>
+          <div class="pillar-title">독자 제형 & 편안한 사용감</div>
         </div>
-        <div class="pillar-eng">"Proprietary formula: Fast-absorbing, deep hydration, and perfect adherence."</div>
+        <div class="pillar-eng">"Proprietary formula: Fast-absorbing, deep hydration, and comfortable adherence — specifically developed for sensitive skin."</div>
         <div class="pillar-kor">직접 제조로 완성한 민감성 특화 제형. ① 끈적임 없는 빠른 흡수 ② 겉돌지 않는 고보습 ③ 완벽한 피부 밀착.</div>
       </div>
     </div>
@@ -698,13 +698,11 @@ body {
     </div>
     <div class="step-body">
       <div class="step-goal">목적: 바이어 성향을 파악하여 맞춤형 데이터 제시 (택 1)</div>
-      
       <div style="margin-bottom: 16px;">
         <div style="font-size: 12px; font-weight: 800; color: var(--purple); margin-bottom: 6px;">🛒 유통/리테일 바이어라면 (IPSY 판매량 강조)</div>
         <div class="eng-block" style="margin-bottom: 6px;">"Tested by over 300,000 US consumers, voted Top Moisturizer & Best Eye Cream on IPSY."</div>
         <div class="kor-block">미국 30만 명 블라인드 테스트 결과, 보습/아이크림 1위로 선정된 검증된 브랜드입니다.</div>
       </div>
-      
       <div>
         <div style="font-size: 12px; font-weight: 800; color: var(--teal-dark); margin-bottom: 6px;">💡 제품력/효능 관심 바이어라면 (독자 제형 팩트 폭격)</div>
         <div class="eng-block" style="margin-bottom: 6px;">"Because we manufacture in-house, our proprietary formula offers fast absorption, deep hydration, and perfect adherence for sensitive skin."</div>
@@ -806,6 +804,7 @@ body {
       <div class="prod-list">
         <div class="prod-item"><span class="prod-name">Vita-C Intensive Serum</span> <span class="new-badge">NEW</span> <span class="ipsy-badge">IPSY</span><br><span class="prod-pitch-short">트리플 비타민C, 최근 IPSY 입점, 브라이트닝+안티에이징</span></div>
       </div>
+      <div class="tip-box">💡 <strong>내부 참고</strong>: 출시 직후 샘플 사이즈로 200,000개 미국 소비자에게 배포 (2024년 10~11월)</div>
     </div>
   </div>
 
@@ -820,7 +819,7 @@ body {
       <span class="line-chevron">▾</span>
     </div>
     <div class="line-body">
-      <div class="line-pitch">"Full skincare line from basics to BB cream, all hypoallergenic tested."</div>
+      <div class="line-pitch">"Our original line — gentle enough for the most sensitive skin, with the same high-performance formula as our bestsellers. And it includes a BB Cream with a patented natural pigment."</div>
       <div class="line-ingredient">핵심: 쌀눈 (Rice Germ) — 쌀 영양 66% 집약</div>
       <div class="prod-list">
         <div class="prod-item"><span class="prod-name">Soothing Skin Toner</span><br><span class="prod-pitch-short">세안 후 pH 밸런스, 피부결 정돈</span></div>
@@ -831,6 +830,7 @@ body {
         <div class="prod-item"><span class="prod-name">Recovery BB Cream</span><br><span class="prod-pitch-short">천연 색소 특허, 자연스러운 커버</span></div>
         <div class="prod-item"><span class="prod-name">Protection Sun Cream</span><br><span class="prod-pitch-short">저자극 자외선 차단</span></div>
       </div>
+      <div class="tip-box">💡 <strong>내부 참고</strong>: 소로시 첫 런칭 라인. 베스트셀러와 동일한 제형 철학 기반, 7종 풀라인으로 바이어 매대 구성 용이. BB크림은 황토 기반 천연 색소 특허 보유.</div>
     </div>
   </div>
 
@@ -845,12 +845,14 @@ body {
       <span class="line-chevron">▾</span>
     </div>
     <div class="line-body">
-      <div class="line-pitch">"Our best-selling line in the US, proven by IPSY consumers with a 4.2 rating."</div>
-      <div class="line-ingredient">핵심: 아로니아 (King's Berry) — 비타민C 대비 20배 항산화</div>
+      <div class="line-pitch">"Our best-selling line in the US, proven by hundreds of thousands of IPSY consumers."</div>
+      <div class="line-ingredient">핵심: 아로니아 (King's Berry) — 비타민C 대비 20배 항산화, 노화 방지 + 칙칙함 개선</div>
       <div class="prod-list">
-        <div class="prod-item"><span class="prod-name">Water Drop Moisturizer</span> <span class="ipsy-badge">IPSY</span><br><span class="prod-pitch-short">물방울 텍스처, 24시간 보습, 4.2점/30만 테스터</span></div>
-        <div class="prod-item"><span class="prod-name">Calming Cream</span> <span class="ipsy-badge">IPSY</span><br><span class="prod-pitch-short">K-Beauty 보습 1위, 진정+보습 동시</span></div>
-        <div class="prod-item"><span class="prod-name">Bucket Mist</span><br><span class="prod-pitch-short">즉각 쿨링, 메이크업 위에도 OK</span></div>
+        <div class="prod-item"><span class="prod-name">Water Drop Moisturizer</span> <span class="ipsy-badge">IPSY</span><br><span class="prod-pitch-short">물방울 텍스처, 24시간 보습, 30만 테스터 검증</span></div>
+        <div class="prod-item"><span class="prod-name">Calming Cream</span> <span class="ipsy-badge">IPSY</span><br><span class="prod-pitch-short">K-Beauty 보습 최상위권, 진정+보습 동시</span>
+          <div class="tip-box" style="margin-top:6px;">💡 <strong>내부 참고</strong>: 미국 주요 프리미엄 보습 브랜드들과의 블라인드 테스트에서 최상위권 기록. 정품 130,000개 수출 완료.</div>
+        </div>
+        <div class="prod-item"><span class="prod-name">Bucket Mist</span><br><span class="prod-pitch-short">아로니아 항산화 미스트, 즉각 쿨링, 메이크업 위에도 OK</span></div>
       </div>
     </div>
   </div>
@@ -871,8 +873,10 @@ body {
       <div class="prod-list">
         <div class="prod-item"><span class="prod-name">Vita-C Intensive Serum</span> <span class="new-badge">NEW</span> <span class="ipsy-badge">IPSY</span><br><span class="prod-pitch-short">트리플 비타민C, 최근 IPSY 입점, 브라이트닝+안티에이징</span></div>
         <div class="prod-item"><span class="prod-name">Toning Serum</span><br><span class="prod-pitch-short">비타민C+베리 항산화, 브라이트닝</span></div>
-        <div class="prod-item"><span class="prod-name">Low-Hyaluronic Booster Serum</span> <span class="ipsy-badge">IPSY</span><br><span class="prod-pitch-short">잡티 개선, 저분자 히알루론산, 30만 테스터</span></div>
-        <div class="prod-item"><span class="prod-name">Spotlight Eye Cream</span> <span class="ipsy-badge">IPSY</span><br><span class="prod-pitch-short">IPSY 아이크림 1위 4.3점, 다크서클 케어</span></div>
+        <div class="prod-item"><span class="prod-name">Low-Hyaluronic Booster Serum</span> <span class="ipsy-badge">IPSY</span><br><span class="prod-pitch-short">잡티 개선, 저분자 히알루론산, 30만 테스터 검증</span></div>
+        <div class="prod-item"><span class="prod-name">Spotlight Eye Cream</span> <span class="ipsy-badge">IPSY</span><br><span class="prod-pitch-short">IPSY 아이크림 1위, 다크서클 케어</span>
+          <div class="tip-box" style="margin-top:6px;">💡 <strong>내부 참고</strong>: 161,000개 샘플 배포 후 24시간 내 41,000명이 추가 구매 — 같은 소비자가 돈 주고 다시 선택한 제품. 정품 150,000개 수출 완료. 2026년 4월 IPSY 풀사이즈 정식 출시 예정.</div>
+        </div>
         <div class="prod-item"><span class="prod-name">Vita-Tangerine Fit Mask</span><br><span class="prod-pitch-short">2단계 마스크, 즉각 브라이트닝</span></div>
       </div>
     </div>
@@ -889,7 +893,7 @@ body {
       <span class="line-chevron">▾</span>
     </div>
     <div class="line-body">
-      <div class="line-pitch">"Specialized for sensitive and acne-prone skin, dermatologist tested."</div>
+      <div class="line-pitch">"This is our dermacosmetic line — formulated since 1999, over 25 years of trouble-care expertise. Herbal-based, dermatologist tested, and gentle enough for the most reactive skin."</div>
       <div class="line-ingredient">핵심: 오리엔탈 허브 + Derma Max AC Complex™</div>
       <div class="prod-list">
         <div class="prod-item"><span class="prod-name">Herbal Eeje Soap</span><br><span class="prod-pitch-short">1999년 오리지널 처방, 트러블 케어 원조</span></div>
@@ -911,7 +915,7 @@ body {
       <span class="line-chevron">▾</span>
     </div>
     <div class="line-body">
-      <div class="line-pitch">"Extended to scalp and hair care with marine fucoidan technology."</div>
+      <div class="line-pitch">"Scalp and hair care line with marine fucoidan technology."</div>
       <div class="line-ingredient">핵심: 해조류 & 후코이단 — 두피 자생력 강화</div>
       <div class="prod-list">
         <div class="prod-item"><span class="prod-name">Active Shampoo</span><br><span class="prod-pitch-short">두피 클렌징 + 모근 영양</span></div>
@@ -937,7 +941,7 @@ body {
   <div class="faq-card" data-faq>
     <div class="faq-q"><span>Q2</span> 가장 큰 차별점은?<span class="faq-chevron">▾</span></div>
     <div class="faq-a">
-      <div class="faq-eng">"Our proprietary formulation. Because we manufacture in-house, we've perfected a formula that absorbs quickly without stickiness, provides deep hydration, and adheres perfectly to the skin."</div>
+      <div class="faq-eng">"Our proprietary formulation. Because we manufacture in-house, we've perfected a formula that absorbs quickly without stickiness, provides deep hydration, and adheres perfectly to the skin — specifically for sensitive skin."</div>
       <div class="faq-kor">직접 제조하기 때문에 가능한 '독자적 제형'입니다. 민감한 피부에도 자극 없이 확실한 효과를 내며, 1) 끈적임 없는 빠른 흡수 2) 겉돌지 않는 고보습 3) 피부에 딱 밀착되는 완벽한 사용감이 가장 큰 무기입니다.</div>
     </div>
   </div>
@@ -945,8 +949,8 @@ body {
   <div class="faq-card" data-faq>
     <div class="faq-q"><span>Q3</span> 리드타임은 얼마나?<span class="faq-chevron">▾</span></div>
     <div class="faq-a">
-      <div class="faq-eng">"We're flexible since we have our own factory. Annual capacity is 2.8 million units, so we can handle large orders quickly and deliver at peak freshness."</div>
-      <div class="faq-kor">자체 공장이라 유연합니다. 연간 288만 개 생산 가능, 대규모 오더도 신속하게 가장 신선한 상태로 맞춰드립니다.</div>
+      <div class="faq-eng">"Typically 2–3 weeks from order confirmation, since we manufacture everything in-house."</div>
+      <div class="faq-kor">자체 제조라 주문 확정 후 보통 2~3주 내 출고 가능합니다.</div>
     </div>
   </div>
 
@@ -961,7 +965,7 @@ body {
   <div class="faq-card" data-faq>
     <div class="faq-q"><span>Q5</span> 미국 시장 실적은?<span class="faq-chevron">▾</span></div>
     <div class="faq-a">
-      <div class="faq-eng">"Highly successful. We've been chosen by IPSY 8+ times. Our Calming Cream and Eye Cream were voted the best in the K-Beauty category by hundreds of thousands of users."</div>
+      <div class="faq-eng">"We've been selected by IPSY 8+ times. Our products have been tested and chosen by hundreds of thousands of real US consumers — not just distributed, but genuinely loved."</div>
       <div class="faq-kor">IPSY에 8회 이상 선정되었습니다. 밀어내기식 수출이 아니라, 수십만 명의 실제 미국 소비자 블라인드 테스트에서 카밍크림과 아이크림이 1위로 꼽힌 검증된 제품입니다.</div>
     </div>
   </div>
@@ -969,8 +973,8 @@ body {
   <div class="faq-card" data-faq>
     <div class="faq-q"><span>Q6</span> OEM/ODM 가능한가요?<span class="faq-chevron">▾</span></div>
     <div class="faq-a">
-      <div class="faq-eng">"We focus on our own brand, but we're open to discussing private label or co-branded products for the right partner."</div>
-      <div class="faq-kor">자사 브랜드 중심이지만, 좋은 파트너라면 PB나 콜라보 제품도 논의 가능합니다.</div>
+      <div class="faq-eng">"We don't do full OEM/ODM, but we do offer private label — same formula, with minor customizations like scent or concentration ratio."</div>
+      <div class="faq-kor">완전한 OEM/ODM은 어렵지만, 기존 처방 기반으로 향이나 배합 비율 등 소폭 커스터마이징한 프라이빗 라벨은 가능합니다.</div>
     </div>
   </div>
 
@@ -993,16 +997,15 @@ body {
   <div class="faq-card" data-faq>
     <div class="faq-q"><span>Q9</span> 독점(Exclusivity) 공급 가능한가요?<span class="faq-chevron">▾</span></div>
     <div class="faq-a">
-      <div class="faq-eng">"It depends on the region and annual volume. Currently, Romania, Poland, Lithuania, Greece, and Germany are under exclusivity."</div>
-      <div class="faq-kor">지역과 연간 보장 물량에 따라 논의 가능합니다. 현재 독점 국가는 <strong>루마니아, 폴란드, 리투아니아, 그리스, 독일</strong>입니다.<br>
-      <span style="background: var(--red-light); color: var(--red); padding: 6px; border-radius: 6px; font-weight: 600; display: block; margin-top: 8px; line-height: 1.4;">💡 [내부 팁] 독일 바이어 응대:</span> 
-      <span style="color: var(--stone-600); display: block; margin-top: 4px; padding-left: 4px;">현재 독일은 소량 거래 중이라, 확실한 빅바이어가 있다면 갈아타기(전환)도 가능합니다. 무조건 거절하지 말고 긍정적으로 여지를 두며 유연하게 상담하세요!</span></div>
+      <div class="faq-eng">"We do have some distribution partners in a few countries, but we're actively looking for stronger, more committed partners in most regions. So let's talk — if the volume works, exclusivity is definitely on the table."</div>
+      <div class="faq-kor">지역과 연간 보장 물량에 따라 논의 가능합니다. 현재 일부 국가에 파트너가 있지만, 더 강한 파트너십을 원하는 지역은 언제든 열려 있습니다.</div>
+      <div class="tip-box" style="margin-top:8px;">💡 <strong>내부 참고</strong>: 루마니아, 폴란드, 리투아니아, 그리스, 독일에 파트너 있음. 단, 폴란드/독일 등 거래량이 작은 곳은 더 좋은 바이어가 있다면 전환 가능. 단정짓지 말고 긍정적으로 열어두기.</div>
     </div>
   </div>
 
 </div>
 
-<!-- TAB 5: NOTICE (참고사항) -->
+<!-- TAB 5: 참고사항 -->
 <div class="tab-content" id="tab-notice">
   <div class="sample-rule" style="border-top: 4px solid var(--teal);">
     <h3 style="color: var(--teal-dark); margin-bottom: 16px; font-size: 15px;">💡 꼭 알아두면 좋은 현장 팁</h3>
@@ -1017,13 +1020,12 @@ body {
       </li>
       <li>
         <strong style="color: var(--stone-900);">가이드 활용법 🎯</strong><br>
-        <span style="color: var(--stone-600);">이 현장 가이드는 어디까지나 '참고용'입니다! 대본처럼 100% 똑같이 하실 필요 없으니, 핵심만 딱 짚고 정은님만의 자연스러운 스타일로 편하게 응대해 주시면 됩니다. 파이팅! 🥰</span>
+        <span style="color: var(--stone-600);">이 현장 가이드는 어디까지나 '참고용'입니다! 대본처럼 100% 똑같이 하실 필요 없으니, 핵심만 딱 짚고 자연스러운 스타일로 편하게 응대해 주시면 됩니다. 파이팅! 🥰</span>
       </li>
     </ul>
   </div>
 </div>
 
-<!-- CUSTOM RESET MODAL -->
 <div id="confirmModal" class="modal-overlay">
   <div class="modal-box">
     <p>샘플 잔여 수량을<br>초기화하시겠습니까?</p>
@@ -1035,7 +1037,6 @@ body {
 </div>
 
 <script>
-// TAB SWITCHING
 document.querySelectorAll('.tab-btn').forEach(btn => {
   btn.addEventListener('click', () => {
     document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
@@ -1045,22 +1046,16 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
   });
 });
 
-// ACCORDION: Steps
 document.querySelectorAll('[data-step] .step-header').forEach(h => {
   h.addEventListener('click', () => h.parentElement.classList.toggle('open'));
 });
-
-// ACCORDION: Lines
 document.querySelectorAll('[data-line] .line-header').forEach(h => {
   h.addEventListener('click', () => h.parentElement.classList.toggle('open'));
 });
-
-// ACCORDION: FAQ
 document.querySelectorAll('[data-faq] .faq-q').forEach(h => {
   h.addEventListener('click', () => h.parentElement.classList.toggle('open'));
 });
 
-// SAMPLE COUNTERS
 const stock = { eye: 120, mask: 200 };
 const initial = { eye: 120, mask: 200 };
 const given = { eye: 0, mask: 0 };
@@ -1081,15 +1076,12 @@ function updateDisplay(type) {
   el.classList.toggle('low', stock[type] <= 20);
 }
 
-// MODAL LOGIC FOR RESET
 function openResetModal() {
   document.getElementById('confirmModal').classList.add('active');
 }
-
 function closeModal() {
   document.getElementById('confirmModal').classList.remove('active');
 }
-
 function executeReset() {
   stock.eye = initial.eye;
   stock.mask = initial.mask;
@@ -1102,4 +1094,3 @@ function executeReset() {
 </script>
 </body>
 </html>
-
