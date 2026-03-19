@@ -59,6 +59,7 @@ body { font-family: 'Noto Sans KR','DM Sans',sans-serif; background:var(--bg); c
 .inv-row:last-child { border-bottom:none; }
 .inv-num { font-size:11px; font-weight:600; color:var(--stone-400); min-width:18px; }
 .inv-name { font-size:12px; font-weight:600; color:var(--stone-700); flex:1; line-height:1.3; }
+.inv-price { font-size:11px; font-weight:700; color:var(--teal-dark); background:var(--teal-light); padding:2px 6px; border-radius:4px; flex-shrink:0; font-family:'DM Sans',sans-serif; white-space:nowrap; }
 .inv-controls { display:flex; align-items:center; gap:8px; flex-shrink:0; }
 .inv-btn { width:32px; height:32px; border-radius:50%; border:2px solid var(--stone-200); background:var(--card); font-size:18px; font-weight:700; color:var(--stone-700); cursor:pointer; display:flex; align-items:center; justify-content:center; transition:all 0.15s; font-family:'DM Sans',sans-serif; line-height:1; }
 .inv-btn:active { background:var(--teal-light); border-color:var(--teal); transform:scale(0.92); }
@@ -85,6 +86,9 @@ body { font-family: 'Noto Sans KR','DM Sans',sans-serif; background:var(--bg); c
 .prod-item { padding:4px 0; border-bottom:1px solid var(--stone-50); }
 .prod-item:last-child { border:none; }
 .prod-name { font-weight:600; color:var(--stone-700); } .prod-pitch-short { color:var(--stone-500); }
+.prod-price-tag { display:inline-block; font-size:11px; font-weight:700; font-family:'DM Sans',sans-serif; margin-left:4px; vertical-align:middle; }
+.prod-price-rrp { color:var(--stone-400); text-decoration:line-through; }
+.prod-price-sale { color:var(--teal-dark); background:var(--teal-light); padding:1px 5px; border-radius:4px; }
 .new-badge { display:inline-block; background:var(--amber); color:#fff; font-size:10px; font-weight:700; padding:1px 5px; border-radius:4px; margin-left:4px; vertical-align:middle; }
 .ipsy-badge { display:inline-block; background:var(--purple); color:#fff; font-size:10px; font-weight:700; padding:1px 5px; border-radius:4px; margin-left:4px; vertical-align:middle; }
 .tip-box { background:var(--amber-light); border:1px solid #FDE68A; border-radius:8px; padding:10px 12px; font-size:12px; color:var(--stone-700); margin-top:10px; line-height:1.6; }
@@ -238,28 +242,28 @@ body { font-family: 'Noto Sans KR','DM Sans',sans-serif; background:var(--bg); c
       <h3>전체 잔여 수량 카운터</h3>
       <span class="inventory-total-badge" id="totalBadge">총 495개</span>
     </div>
-    <div class="inv-row"><span class="inv-num">1</span><span class="inv-name">Soothing Skin Toner</span><div class="inv-controls"><button class="inv-btn minus" onclick="adj(0,-1)">−</button><span class="inv-count" id="c0">5</span><button class="inv-btn" onclick="adj(0,1)">+</button></div></div>
-    <div class="inv-row"><span class="inv-num">2</span><span class="inv-name">Repair Skin Softener</span><div class="inv-controls"><button class="inv-btn minus" onclick="adj(1,-1)">−</button><span class="inv-count" id="c1">6</span><button class="inv-btn" onclick="adj(1,1)">+</button></div></div>
-    <div class="inv-row"><span class="inv-num">3</span><span class="inv-name">Mild Lotion</span><div class="inv-controls"><button class="inv-btn minus" onclick="adj(2,-1)">−</button><span class="inv-count" id="c2">6</span><button class="inv-btn" onclick="adj(2,1)">+</button></div></div>
-    <div class="inv-row"><span class="inv-num">4</span><span class="inv-name">Calming Essence</span><div class="inv-controls"><button class="inv-btn minus" onclick="adj(3,-1)">−</button><span class="inv-count" id="c3">6</span><button class="inv-btn" onclick="adj(3,1)">+</button></div></div>
-    <div class="inv-row"><span class="inv-num">5</span><span class="inv-name">NMF Serum</span><div class="inv-controls"><button class="inv-btn minus" onclick="adj(4,-1)">−</button><span class="inv-count" id="c4">6</span><button class="inv-btn" onclick="adj(4,1)">+</button></div></div>
-    <div class="inv-row"><span class="inv-num">6</span><span class="inv-name">Recovery BB Cream</span><div class="inv-controls"><button class="inv-btn minus" onclick="adj(5,-1)">−</button><span class="inv-count" id="c5">5</span><button class="inv-btn" onclick="adj(5,1)">+</button></div></div>
-    <div class="inv-row"><span class="inv-num">7</span><span class="inv-name">Bucket Mist</span><div class="inv-controls"><button class="inv-btn minus" onclick="adj(6,-1)">−</button><span class="inv-count" id="c6">5</span><button class="inv-btn" onclick="adj(6,1)">+</button></div></div>
-    <div class="inv-row"><span class="inv-num">8</span><span class="inv-name">Water Drop Moisturizer</span><div class="inv-controls"><button class="inv-btn minus" onclick="adj(7,-1)">−</button><span class="inv-count" id="c7">7</span><button class="inv-btn" onclick="adj(7,1)">+</button></div></div>
-    <div class="inv-row"><span class="inv-num">9</span><span class="inv-name">Calming Cream</span><div class="inv-controls"><button class="inv-btn minus" onclick="adj(8,-1)">−</button><span class="inv-count" id="c8">7</span><button class="inv-btn" onclick="adj(8,1)">+</button></div></div>
-    <div class="inv-row"><span class="inv-num">10</span><span class="inv-name">Vita-Tangerine Toning Serum</span><div class="inv-controls"><button class="inv-btn minus" onclick="adj(9,-1)">−</button><span class="inv-count" id="c9">6</span><button class="inv-btn" onclick="adj(9,1)">+</button></div></div>
-    <div class="inv-row"><span class="inv-num">11</span><span class="inv-name">Low-Hyaluronic Booster Serum</span><div class="inv-controls"><button class="inv-btn minus" onclick="adj(10,-1)">−</button><span class="inv-count" id="c10">8</span><button class="inv-btn" onclick="adj(10,1)">+</button></div></div>
-    <div class="inv-row"><span class="inv-num">12</span><span class="inv-name">Vita-Tangerine Fit Mask</span><div class="inv-controls"><button class="inv-btn minus" onclick="adj(11,-1)">−</button><span class="inv-count" id="c11">250</span><button class="inv-btn" onclick="adj(11,1)">+</button></div></div>
-    <div class="inv-row"><span class="inv-num">13</span><span class="inv-name">Spotlight Eye Cream</span><div class="inv-controls"><button class="inv-btn minus" onclick="adj(12,-1)">−</button><span class="inv-count" id="c12">127</span><button class="inv-btn" onclick="adj(12,1)">+</button></div></div>
-    <div class="inv-row"><span class="inv-num">14</span><span class="inv-name">Fucoidan Peeling & Soothing Pad</span><div class="inv-controls"><button class="inv-btn minus" onclick="adj(13,-1)">−</button><span class="inv-count" id="c13">5</span><button class="inv-btn" onclick="adj(13,1)">+</button></div></div>
-    <div class="inv-row"><span class="inv-num">15</span><span class="inv-name">Active Shampoo</span><div class="inv-controls"><button class="inv-btn minus" onclick="adj(14,-1)">−</button><span class="inv-count" id="c14">3</span><button class="inv-btn" onclick="adj(14,1)">+</button></div></div>
-    <div class="inv-row"><span class="inv-num">16</span><span class="inv-name">Active Hair Tonic</span><div class="inv-controls"><button class="inv-btn minus" onclick="adj(15,-1)">−</button><span class="inv-count" id="c15">5</span><button class="inv-btn" onclick="adj(15,1)">+</button></div></div>
-    <div class="inv-row"><span class="inv-num">17</span><span class="inv-name">Derma Lab Herbal Eeje Soap</span><div class="inv-controls"><button class="inv-btn minus" onclick="adj(16,-1)">−</button><span class="inv-count" id="c16">5</span><button class="inv-btn" onclick="adj(16,1)">+</button></div></div>
-    <div class="inv-row"><span class="inv-num">18</span><span class="inv-name">Derma Lab Herbal Calming Mist</span><div class="inv-controls"><button class="inv-btn minus" onclick="adj(17,-1)">−</button><span class="inv-count" id="c17">8</span><button class="inv-btn" onclick="adj(17,1)">+</button></div></div>
-    <div class="inv-row"><span class="inv-num">19</span><span class="inv-name">Derma Lab Soothing Toner Pad</span><div class="inv-controls"><button class="inv-btn minus" onclick="adj(18,-1)">−</button><span class="inv-count" id="c18">5</span><button class="inv-btn" onclick="adj(18,1)">+</button></div></div>
-    <div class="inv-row"><span class="inv-num">20</span><span class="inv-name">Derma Lab Intensive Foaming Cleanser</span><div class="inv-controls"><button class="inv-btn minus" onclick="adj(19,-1)">−</button><span class="inv-count" id="c19">5</span><button class="inv-btn" onclick="adj(19,1)">+</button></div></div>
-    <div class="inv-row"><span class="inv-num">21</span><span class="inv-name">Protecting Sunscreen</span><div class="inv-controls"><button class="inv-btn minus" onclick="adj(20,-1)">−</button><span class="inv-count" id="c20">9</span><button class="inv-btn" onclick="adj(20,1)">+</button></div></div>
-    <div class="inv-row"><span class="inv-num">22</span><span class="inv-name">Vita-C Intensive Serum</span><div class="inv-controls"><button class="inv-btn minus" onclick="adj(21,-1)">−</button><span class="inv-count" id="c21">6</span><button class="inv-btn" onclick="adj(21,1)">+</button></div></div>
+    <div class="inv-row"><span class="inv-num">1</span><span class="inv-name">Soothing Skin Toner</span><span class="inv-price">€8</span><div class="inv-controls"><button class="inv-btn minus" onclick="adj(0,-1)">−</button><span class="inv-count" id="c0">5</span><button class="inv-btn" onclick="adj(0,1)">+</button></div></div>
+    <div class="inv-row"><span class="inv-num">2</span><span class="inv-name">Repair Skin Softener</span><span class="inv-price">€9</span><div class="inv-controls"><button class="inv-btn minus" onclick="adj(1,-1)">−</button><span class="inv-count" id="c1">6</span><button class="inv-btn" onclick="adj(1,1)">+</button></div></div>
+    <div class="inv-row"><span class="inv-num">3</span><span class="inv-name">Mild Lotion</span><span class="inv-price">€10</span><div class="inv-controls"><button class="inv-btn minus" onclick="adj(2,-1)">−</button><span class="inv-count" id="c2">6</span><button class="inv-btn" onclick="adj(2,1)">+</button></div></div>
+    <div class="inv-row"><span class="inv-num">4</span><span class="inv-name">Calming Essence</span><span class="inv-price">€11</span><div class="inv-controls"><button class="inv-btn minus" onclick="adj(3,-1)">−</button><span class="inv-count" id="c3">6</span><button class="inv-btn" onclick="adj(3,1)">+</button></div></div>
+    <div class="inv-row"><span class="inv-num">5</span><span class="inv-name">NMF Serum</span><span class="inv-price">€12</span><div class="inv-controls"><button class="inv-btn minus" onclick="adj(4,-1)">−</button><span class="inv-count" id="c4">6</span><button class="inv-btn" onclick="adj(4,1)">+</button></div></div>
+    <div class="inv-row"><span class="inv-num">6</span><span class="inv-name">Recovery BB Cream</span><span class="inv-price">€9</span><div class="inv-controls"><button class="inv-btn minus" onclick="adj(5,-1)">−</button><span class="inv-count" id="c5">5</span><button class="inv-btn" onclick="adj(5,1)">+</button></div></div>
+    <div class="inv-row"><span class="inv-num">7</span><span class="inv-name">Bucket Mist</span><span class="inv-price">€8</span><div class="inv-controls"><button class="inv-btn minus" onclick="adj(6,-1)">−</button><span class="inv-count" id="c6">5</span><button class="inv-btn" onclick="adj(6,1)">+</button></div></div>
+    <div class="inv-row"><span class="inv-num">8</span><span class="inv-name">Water Drop Moisturizer</span><span class="inv-price">€10</span><div class="inv-controls"><button class="inv-btn minus" onclick="adj(7,-1)">−</button><span class="inv-count" id="c7">7</span><button class="inv-btn" onclick="adj(7,1)">+</button></div></div>
+    <div class="inv-row"><span class="inv-num">9</span><span class="inv-name">Calming Cream</span><span class="inv-price">€14</span><div class="inv-controls"><button class="inv-btn minus" onclick="adj(8,-1)">−</button><span class="inv-count" id="c8">7</span><button class="inv-btn" onclick="adj(8,1)">+</button></div></div>
+    <div class="inv-row"><span class="inv-num">10</span><span class="inv-name">Vita-Tangerine Toning Serum</span><span class="inv-price">€11</span><div class="inv-controls"><button class="inv-btn minus" onclick="adj(9,-1)">−</button><span class="inv-count" id="c9">6</span><button class="inv-btn" onclick="adj(9,1)">+</button></div></div>
+    <div class="inv-row"><span class="inv-num">11</span><span class="inv-name">Low-Hyaluronic Booster Serum</span><span class="inv-price">€13</span><div class="inv-controls"><button class="inv-btn minus" onclick="adj(10,-1)">−</button><span class="inv-count" id="c10">8</span><button class="inv-btn" onclick="adj(10,1)">+</button></div></div>
+    <div class="inv-row"><span class="inv-num">12</span><span class="inv-name">Vita-Tangerine Fit Mask</span><span class="inv-price">€1.5</span><div class="inv-controls"><button class="inv-btn minus" onclick="adj(11,-1)">−</button><span class="inv-count" id="c11">250</span><button class="inv-btn" onclick="adj(11,1)">+</button></div></div>
+    <div class="inv-row"><span class="inv-num">13</span><span class="inv-name">Spotlight Eye Cream</span><span class="inv-price">€16</span><div class="inv-controls"><button class="inv-btn minus" onclick="adj(12,-1)">−</button><span class="inv-count" id="c12">127</span><button class="inv-btn" onclick="adj(12,1)">+</button></div></div>
+    <div class="inv-row"><span class="inv-num">14</span><span class="inv-name">Fucoidan Peeling & Soothing Pad</span><span class="inv-price">€13</span><div class="inv-controls"><button class="inv-btn minus" onclick="adj(13,-1)">−</button><span class="inv-count" id="c13">5</span><button class="inv-btn" onclick="adj(13,1)">+</button></div></div>
+    <div class="inv-row"><span class="inv-num">15</span><span class="inv-name">Active Shampoo</span><span class="inv-price">€12</span><div class="inv-controls"><button class="inv-btn minus" onclick="adj(14,-1)">−</button><span class="inv-count" id="c14">3</span><button class="inv-btn" onclick="adj(14,1)">+</button></div></div>
+    <div class="inv-row"><span class="inv-num">16</span><span class="inv-name">Active Hair Tonic</span><span class="inv-price">€7</span><div class="inv-controls"><button class="inv-btn minus" onclick="adj(15,-1)">−</button><span class="inv-count" id="c15">5</span><button class="inv-btn" onclick="adj(15,1)">+</button></div></div>
+    <div class="inv-row"><span class="inv-num">17</span><span class="inv-name">Derma Lab Herbal Eeje Soap</span><span class="inv-price">€4</span><div class="inv-controls"><button class="inv-btn minus" onclick="adj(16,-1)">−</button><span class="inv-count" id="c16">5</span><button class="inv-btn" onclick="adj(16,1)">+</button></div></div>
+    <div class="inv-row"><span class="inv-num">18</span><span class="inv-name">Derma Lab Herbal Calming Mist</span><span class="inv-price">€9</span><div class="inv-controls"><button class="inv-btn minus" onclick="adj(17,-1)">−</button><span class="inv-count" id="c17">8</span><button class="inv-btn" onclick="adj(17,1)">+</button></div></div>
+    <div class="inv-row"><span class="inv-num">19</span><span class="inv-name">Derma Lab Soothing Toner Pad</span><span class="inv-price">€10</span><div class="inv-controls"><button class="inv-btn minus" onclick="adj(18,-1)">−</button><span class="inv-count" id="c18">5</span><button class="inv-btn" onclick="adj(18,1)">+</button></div></div>
+    <div class="inv-row"><span class="inv-num">20</span><span class="inv-name">Derma Lab Intensive Foaming Cleanser</span><span class="inv-price">€7</span><div class="inv-controls"><button class="inv-btn minus" onclick="adj(19,-1)">−</button><span class="inv-count" id="c19">5</span><button class="inv-btn" onclick="adj(19,1)">+</button></div></div>
+    <div class="inv-row"><span class="inv-num">21</span><span class="inv-name">Protecting Sunscreen</span><span class="inv-price">€10</span><div class="inv-controls"><button class="inv-btn minus" onclick="adj(20,-1)">−</button><span class="inv-count" id="c20">9</span><button class="inv-btn" onclick="adj(20,1)">+</button></div></div>
+    <div class="inv-row"><span class="inv-num">22</span><span class="inv-name">Vita-C Intensive Serum</span><span class="inv-price">€13</span><div class="inv-controls"><button class="inv-btn minus" onclick="adj(21,-1)">−</button><span class="inv-count" id="c21">6</span><button class="inv-btn" onclick="adj(21,1)">+</button></div></div>
   </div>
 
   <button class="reset-btn" onclick="openResetModal()">전체 수량 초기화</button>
@@ -278,7 +282,7 @@ body { font-family: 'Noto Sans KR','DM Sans',sans-serif; background:var(--bg); c
     <div class="line-body">
       <div class="line-pitch">"Our newest serum with Triple Vitamin C Complex — brightening, anti-aging, and hydration in one, without irritation."</div>
       <div class="line-ingredient">핵심: Triple Vitamin C (Ascorbic Acid + Ethyl Ascorbic Acid + Sodium Ascorbyl Phosphate) + 알로에 베라 + 후코이단 + 히알루론산</div>
-      <div class="prod-list"><div class="prod-item"><span class="prod-name">Vita-C Intensive Serum</span> <span class="new-badge">NEW</span> <span class="ipsy-badge">IPSY</span><br><span class="prod-pitch-short">트리플 비타민C, 최근 IPSY 입점, 브라이트닝+안티에이징</span></div></div>
+      <div class="prod-list"><div class="prod-item"><span class="prod-name">Vita-C Intensive Serum</span> <span class="new-badge">NEW</span> <span class="ipsy-badge">IPSY</span> <span class="prod-price-tag"><span class="prod-price-rrp">€27</span> <span class="prod-price-sale">€13</span></span><br><span class="prod-pitch-short">트리플 비타민C, 최근 IPSY 입점, 브라이트닝+안티에이징</span></div></div>
       <div class="tip-box">💡 <strong>내부 참고</strong>: 출시 직후 샘플 사이즈로 200,000개 미국 소비자에게 배포 (2024년 10~11월)</div>
     </div>
   </div>
@@ -288,13 +292,13 @@ body { font-family: 'Noto Sans KR','DM Sans',sans-serif; background:var(--bg); c
       <div class="line-pitch">"Our original line — gentle enough for the most sensitive skin, with the same high-performance formula as our bestsellers. And it includes a BB Cream with a patented natural pigment."</div>
       <div class="line-ingredient">핵심: 쌀눈 (Rice Germ) — 쌀 영양 66% 집약</div>
       <div class="prod-list">
-        <div class="prod-item"><span class="prod-name">Soothing Skin Toner</span><br><span class="prod-pitch-short">세안 후 pH 밸런스, 피부결 정돈</span></div>
-        <div class="prod-item"><span class="prod-name">Repair Skin Softener</span><br><span class="prod-pitch-short">밀키 텍스처, 건조 피부 영양 공급</span></div>
-        <div class="prod-item"><span class="prod-name">Mild Lotion</span><br><span class="prod-pitch-short">산뜻한 고보습, 세라마이드 함유</span></div>
-        <div class="prod-item"><span class="prod-name">NMF Serum</span><br><span class="prod-pitch-short">천연보습인자(NMF), 여드름 피부 OK</span></div>
-        <div class="prod-item"><span class="prod-name">Calming Essence</span><br><span class="prod-pitch-short">즉각 수분, 민감 피부 진정</span></div>
-        <div class="prod-item"><span class="prod-name">Recovery BB Cream</span><br><span class="prod-pitch-short">천연 색소 특허, 자연스러운 커버</span></div>
-        <div class="prod-item"><span class="prod-name">Protection Sun Cream</span><br><span class="prod-pitch-short">저자극 자외선 차단</span></div>
+        <div class="prod-item"><span class="prod-name">Soothing Skin Toner</span> <span class="prod-price-tag"><span class="prod-price-rrp">€17</span> <span class="prod-price-sale">€8</span></span><br><span class="prod-pitch-short">세안 후 pH 밸런스, 피부결 정돈</span></div>
+        <div class="prod-item"><span class="prod-name">Repair Skin Softener</span> <span class="prod-price-tag"><span class="prod-price-rrp">€18</span> <span class="prod-price-sale">€9</span></span><br><span class="prod-pitch-short">밀키 텍스처, 건조 피부 영양 공급</span></div>
+        <div class="prod-item"><span class="prod-name">Mild Lotion</span> <span class="prod-price-tag"><span class="prod-price-rrp">€20</span> <span class="prod-price-sale">€10</span></span><br><span class="prod-pitch-short">산뜻한 고보습, 세라마이드 함유</span></div>
+        <div class="prod-item"><span class="prod-name">NMF Serum</span> <span class="prod-price-tag"><span class="prod-price-rrp">€25</span> <span class="prod-price-sale">€12</span></span><br><span class="prod-pitch-short">천연보습인자(NMF), 여드름 피부 OK</span></div>
+        <div class="prod-item"><span class="prod-name">Calming Essence</span> <span class="prod-price-tag"><span class="prod-price-rrp">€23</span> <span class="prod-price-sale">€11</span></span><br><span class="prod-pitch-short">즉각 수분, 민감 피부 진정</span></div>
+        <div class="prod-item"><span class="prod-name">Recovery BB Cream</span> <span class="prod-price-tag"><span class="prod-price-rrp">€18</span> <span class="prod-price-sale">€9</span></span><br><span class="prod-pitch-short">천연 색소 특허, 자연스러운 커버</span></div>
+        <div class="prod-item"><span class="prod-name">Protection Sun Cream</span> <span class="prod-price-tag"><span class="prod-price-rrp">€20</span> <span class="prod-price-sale">€10</span></span><br><span class="prod-pitch-short">저자극 자외선 차단</span></div>
       </div>
       <div class="tip-box">💡 <strong>내부 참고</strong>: 소로시 첫 런칭 라인. 7종 풀라인으로 바이어 매대 구성 용이. BB크림은 황토 기반 천연 색소 특허 보유.</div>
     </div>
@@ -305,11 +309,11 @@ body { font-family: 'Noto Sans KR','DM Sans',sans-serif; background:var(--bg); c
       <div class="line-pitch">"Our best-selling line in the US, proven by hundreds of thousands of IPSY consumers."</div>
       <div class="line-ingredient">핵심: 아로니아 (King's Berry) — 비타민C 대비 20배 항산화, 노화 방지 + 칙칙함 개선</div>
       <div class="prod-list">
-        <div class="prod-item"><span class="prod-name">Water Drop Moisturizer</span> <span class="ipsy-badge">IPSY</span><br><span class="prod-pitch-short">물방울 텍스처, 24시간 보습, 30만 테스터 검증</span></div>
-        <div class="prod-item"><span class="prod-name">Calming Cream</span> <span class="ipsy-badge">IPSY</span><br><span class="prod-pitch-short">K-Beauty 보습 최상위권, 진정+보습 동시</span>
+        <div class="prod-item"><span class="prod-name">Water Drop Moisturizer</span> <span class="ipsy-badge">IPSY</span> <span class="prod-price-tag"><span class="prod-price-rrp">€20</span> <span class="prod-price-sale">€10</span></span><br><span class="prod-pitch-short">물방울 텍스처, 24시간 보습, 30만 테스터 검증</span></div>
+        <div class="prod-item"><span class="prod-name">Calming Cream</span> <span class="ipsy-badge">IPSY</span> <span class="prod-price-tag"><span class="prod-price-rrp">€28</span> <span class="prod-price-sale">€14</span></span><br><span class="prod-pitch-short">K-Beauty 보습 최상위권, 진정+보습 동시</span>
           <div class="tip-box" style="margin-top:6px;">💡 <strong>내부 참고</strong>: 미국 주요 프리미엄 보습 브랜드들과의 블라인드 테스트에서 최상위권 기록. 정품 130,000개 수출 완료.</div>
         </div>
-        <div class="prod-item"><span class="prod-name">Bucket Mist</span><br><span class="prod-pitch-short">아로니아 항산화 미스트, 즉각 쿨링, 메이크업 위에도 OK</span></div>
+        <div class="prod-item"><span class="prod-name">Bucket Mist</span> <span class="prod-price-tag"><span class="prod-price-rrp">€16</span> <span class="prod-price-sale">€8</span></span><br><span class="prod-pitch-short">아로니아 항산화 미스트, 즉각 쿨링, 메이크업 위에도 OK</span></div>
       </div>
     </div>
   </div>
@@ -319,13 +323,13 @@ body { font-family: 'Noto Sans KR','DM Sans',sans-serif; background:var(--bg); c
       <div class="line-pitch">"Vitamin C intensive line using Jeju Green Tangerine for brightening and anti-aging."</div>
       <div class="line-ingredient">핵심: 제주 청귤 — 1년 중 4주만 수확, 고농축 비타민C</div>
       <div class="prod-list">
-        <div class="prod-item"><span class="prod-name">Vita-C Intensive Serum</span> <span class="new-badge">NEW</span> <span class="ipsy-badge">IPSY</span><br><span class="prod-pitch-short">트리플 비타민C, 최근 IPSY 입점, 브라이트닝+안티에이징</span></div>
-        <div class="prod-item"><span class="prod-name">Toning Serum</span><br><span class="prod-pitch-short">비타민C+베리 항산화, 브라이트닝</span></div>
-        <div class="prod-item"><span class="prod-name">Low-Hyaluronic Booster Serum</span> <span class="ipsy-badge">IPSY</span><br><span class="prod-pitch-short">잡티 개선, 저분자 히알루론산, 30만 테스터 검증</span></div>
-        <div class="prod-item"><span class="prod-name">Spotlight Eye Cream</span> <span class="ipsy-badge">IPSY</span><br><span class="prod-pitch-short">IPSY 아이크림 1위, 다크서클 케어</span>
+        <div class="prod-item"><span class="prod-name">Vita-C Intensive Serum</span> <span class="new-badge">NEW</span> <span class="ipsy-badge">IPSY</span> <span class="prod-price-tag"><span class="prod-price-rrp">€27</span> <span class="prod-price-sale">€13</span></span><br><span class="prod-pitch-short">트리플 비타민C, 최근 IPSY 입점, 브라이트닝+안티에이징</span></div>
+        <div class="prod-item"><span class="prod-name">Toning Serum</span> <span class="prod-price-tag"><span class="prod-price-rrp">€23</span> <span class="prod-price-sale">€11</span></span><br><span class="prod-pitch-short">비타민C+베리 항산화, 브라이트닝</span></div>
+        <div class="prod-item"><span class="prod-name">Low-Hyaluronic Booster Serum</span> <span class="ipsy-badge">IPSY</span> <span class="prod-price-tag"><span class="prod-price-rrp">€27</span> <span class="prod-price-sale">€13</span></span><br><span class="prod-pitch-short">잡티 개선, 저분자 히알루론산, 30만 테스터 검증</span></div>
+        <div class="prod-item"><span class="prod-name">Spotlight Eye Cream</span> <span class="ipsy-badge">IPSY</span> <span class="prod-price-tag"><span class="prod-price-rrp">€33</span> <span class="prod-price-sale">€16</span></span><br><span class="prod-pitch-short">IPSY 아이크림 1위, 다크서클 케어</span>
           <div class="tip-box" style="margin-top:6px;">💡 <strong>내부 참고</strong>: 161,000개 샘플 배포 후 24시간 내 41,000명이 추가 구매. 정품 150,000개 수출 완료. 2026년 4월 IPSY 풀사이즈 정식 출시 예정.</div>
         </div>
-        <div class="prod-item"><span class="prod-name">Vita-Tangerine Fit Mask</span><br><span class="prod-pitch-short">2단계 마스크, 즉각 브라이트닝</span></div>
+        <div class="prod-item"><span class="prod-name">Vita-Tangerine Fit Mask</span> <span class="prod-price-tag"><span class="prod-price-rrp">€3.5</span> <span class="prod-price-sale">€1.5</span></span><br><span class="prod-pitch-short">2단계 마스크, 즉각 브라이트닝</span></div>
       </div>
     </div>
   </div>
@@ -335,10 +339,10 @@ body { font-family: 'Noto Sans KR','DM Sans',sans-serif; background:var(--bg); c
       <div class="line-pitch">"This is our dermacosmetic line — formulated since 1999, over 25 years of trouble-care expertise. Herbal-based, dermatologist tested, and gentle enough for the most reactive skin."</div>
       <div class="line-ingredient">핵심: 오리엔탈 허브 + Derma Max AC Complex™</div>
       <div class="prod-list">
-        <div class="prod-item"><span class="prod-name">Herbal Eeje Soap</span><br><span class="prod-pitch-short">1999년 오리지널 처방, 트러블 케어 원조</span></div>
-        <div class="prod-item"><span class="prod-name">Herbal Calming Mist</span><br><span class="prod-pitch-short">SOS 진정 미스트, 붉은기 즉각 완화</span></div>
-        <div class="prod-item"><span class="prod-name">Herbal Soothing Toner Pad</span><br><span class="prod-pitch-short">각질 정돈 + 진정 동시에</span></div>
-        <div class="prod-item"><span class="prod-name">Intensive Foaming Cleanser</span><br><span class="prod-pitch-short">약산성, 민감 피부 전용 클렌저</span></div>
+        <div class="prod-item"><span class="prod-name">Herbal Eeje Soap</span> <span class="prod-price-tag"><span class="prod-price-rrp">€9</span> <span class="prod-price-sale">€4</span></span><br><span class="prod-pitch-short">1999년 오리지널 처방, 트러블 케어 원조</span></div>
+        <div class="prod-item"><span class="prod-name">Herbal Calming Mist</span> <span class="prod-price-tag"><span class="prod-price-rrp">€19</span> <span class="prod-price-sale">€9</span></span><br><span class="prod-pitch-short">SOS 진정 미스트, 붉은기 즉각 완화</span></div>
+        <div class="prod-item"><span class="prod-name">Herbal Soothing Toner Pad</span> <span class="prod-price-tag"><span class="prod-price-rrp">€20</span> <span class="prod-price-sale">€10</span></span><br><span class="prod-pitch-short">각질 정돈 + 진정 동시에</span></div>
+        <div class="prod-item"><span class="prod-name">Intensive Foaming Cleanser</span> <span class="prod-price-tag"><span class="prod-price-rrp">€14</span> <span class="prod-price-sale">€7</span></span><br><span class="prod-pitch-short">약산성, 민감 피부 전용 클렌저</span></div>
       </div>
     </div>
   </div>
@@ -348,9 +352,9 @@ body { font-family: 'Noto Sans KR','DM Sans',sans-serif; background:var(--bg); c
       <div class="line-pitch">"Scalp and hair care line with marine fucoidan technology."</div>
       <div class="line-ingredient">핵심: 해조류 & 후코이단 — 두피 자생력 강화</div>
       <div class="prod-list">
-        <div class="prod-item"><span class="prod-name">Active Shampoo</span><br><span class="prod-pitch-short">두피 클렌징 + 모근 영양</span></div>
-        <div class="prod-item"><span class="prod-name">Active Hair Tonic</span><br><span class="prod-pitch-short">두피 쿨링, 탈모 예방 케어</span></div>
-        <div class="prod-item"><span class="prod-name">Fucoidan Peeling & Soothing Pad Set</span><br><span class="prod-pitch-short">2단계 패드, 각질 제거 후 진정</span></div>
+        <div class="prod-item"><span class="prod-name">Active Shampoo</span> <span class="prod-price-tag"><span class="prod-price-rrp">€25</span> <span class="prod-price-sale">€12</span></span><br><span class="prod-pitch-short">두피 클렌징 + 모근 영양</span></div>
+        <div class="prod-item"><span class="prod-name">Active Hair Tonic</span> <span class="prod-price-tag"><span class="prod-price-rrp">€15</span> <span class="prod-price-sale">€7</span></span><br><span class="prod-pitch-short">두피 쿨링, 탈모 예방 케어</span></div>
+        <div class="prod-item"><span class="prod-name">Fucoidan Peeling & Soothing Pad Set</span> <span class="prod-price-tag"><span class="prod-price-rrp">€27</span> <span class="prod-price-sale">€13</span></span><br><span class="prod-pitch-short">2단계 패드, 각질 제거 후 진정</span></div>
       </div>
     </div>
   </div>
