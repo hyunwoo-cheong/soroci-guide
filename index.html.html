@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>SOROCI 현장 가이드 | Beautyworld Middle East 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+:root{
+  --ink:#22302B;
+  --ink-soft:#5A6B63;
+  --line:#E6EAE7;
+  --bg:#FFFFFF;
+  --card:#F7F9F8;
+  --accent:#3E5F52;
+  --accent-soft:#EAF1EE;
+  --rice:#A98F5F;   --rice-bg:#F6F1E7;
+  --drizzle:#4C74A0; --drizzle-bg:#EBF1F7;
+  --tang:#D97E2E;   --tang-bg:#FBF0E3;
+  --marine:#2E7D8A; --marine-bg:#E7F2F4;
+  --derma:#4E7D52;  --derma-bg:#EAF3EB;
+  --danger:#B4552F;
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{font-size:16px}
+body{
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo",sans-serif;
+  background:var(--bg);color:var(--ink);line-height:1.6;
+  padding-bottom:76px;
+}
+.serif{font-family:"Gowun Batang",serif}
+header{
+  position:sticky;top:0;z-index:20;background:rgba(255,255,255,.92);
+  backdrop-filter:blur(8px);border-bottom:1px solid var(--line);
+  padding:14px 20px 12px;
+}
+header .brand{font-family:"Gowun Batang",serif;font-weight:700;font-size:1.15rem;letter-spacing:.14em}
+header .tagline{font-size:.72rem;color:var(--ink-soft);letter-spacing:.06em;margin-top:1px}
+main{max-width:560px;margin:0 auto;padding:20px 18px 32px}
+.page{display:none;animation:fade .25s ease}
+.page.on{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.page{animation:none}}
+
+h2.sec{font-family:"Gowun Batang",serif;font-size:1.3rem;font-weight:700;margin:26px 0 6px}
+h2.sec:first-child{margin-top:4px}
+p.sub{font-size:.85rem;color:var(--ink-soft);margin-bottom:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin-bottom:12px}
+.card h3{font-size:.98rem;margin-bottom:6px}
+.card p{font-size:.88rem;color:var(--ink-soft)}
+.en{font-family:"Gowun Batang",serif;font-size:.95rem;line-height:1.55;color:var(--ink);
+  background:var(--accent-soft);border-left:3px solid var(--accent);
+  padding:10px 12px;border-radius:0 10px 10px 0;margin:8px 0}
+.kr{font-size:.85rem;color:var(--ink-soft)}
+.chip{display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:.04em;
+  padding:2px 9px;border-radius:99px;vertical-align:middle}
+.must{background:var(--accent);color:#fff}
+.info{background:var(--accent-soft);color:var(--accent)}
+.note{background:#FFF7EC;border:1px solid #F0DFC3;border-radius:10px;
+  padding:10px 12px;font-size:.82rem;color:#7A5A28;margin-top:8px}
+.note b{font-weight:700}
+
+/* accordion */
+.acc{border:1px solid var(--line);border-radius:12px;margin-bottom:10px;overflow:hidden;background:#fff}
+.acc>button{width:100%;text-align:left;background:none;border:0;cursor:pointer;
+  padding:14px 44px 14px 14px;font-size:.95rem;font-weight:600;color:var(--ink);
+  position:relative;font-family:inherit;line-height:1.45}
+.acc>button::after{content:"▾";position:absolute;right:14px;top:50%;transform:translateY(-50%);
+  color:var(--ink-soft);transition:transform .2s}
+.acc.open>button::after{transform:translateY(-50%) rotate(180deg)}
+.acc .body{display:none;padding:0 14px 14px;font-size:.87rem}
+.acc.open .body{display:block}
+
+/* line color helpers */
+.l-rice{--lc:var(--rice);--lb:var(--rice-bg)}
+.l-drizzle{--lc:var(--drizzle);--lb:var(--drizzle-bg)}
+.l-tang{--lc:var(--tang);--lb:var(--tang-bg)}
+.l-marine{--lc:var(--marine);--lb:var(--marine-bg)}
+.l-derma{--lc:var(--derma);--lb:var(--derma-bg)}
+.line-chip{display:inline-block;font-size:.7rem;font-weight:700;padding:2px 9px;
+  border-radius:99px;background:var(--lb);color:var(--lc);margin-right:6px}
+.acc.line>button{border-left:4px solid var(--lc)}
+.sku{padding:10px 0;border-top:1px dashed var(--line)}
+.sku:first-of-type{border-top:0}
+.sku .nm{font-weight:600;font-size:.9rem}
+.sku .tag{font-size:.66rem;font-weight:700;color:#fff;background:var(--lc);
+  border-radius:5px;padding:1px 6px;margin-left:5px;vertical-align:1px}
+.sku .ds{font-size:.82rem;color:var(--ink-soft);margin-top:2px}
+
+/* home journey */
+.journey{display:flex;flex-direction:column;gap:10px;margin:14px 0 4px}
+.stage{display:flex;gap:14px;align-items:flex-start;background:var(--card);
+  border:1px solid var(--line);border-radius:14px;padding:14px}
+.stage .no{font-family:"Gowun Batang",serif;font-size:1.5rem;font-weight:700;color:var(--accent);
+  line-height:1.2;min-width:30px}
+.stage h3{font-size:.95rem}
+.stage p{font-size:.83rem;color:var(--ink-soft);margin-top:2px}
+.stage .go{margin-top:8px;display:inline-block;font-size:.8rem;font-weight:700;color:var(--accent);
+  background:var(--accent-soft);border:0;border-radius:8px;padding:6px 12px;cursor:pointer;font-family:inherit}
+
+/* pillars */
+.pillars{display:flex;flex-direction:column;gap:10px}
+.pillar{border:1px solid var(--line);border-radius:14px;padding:14px;background:#fff}
+.pillar .ico{font-size:1.3rem}
+.pillar h3{font-size:.95rem;margin:4px 0 2px}
+
+/* flow steps */
+.step .lbl{font-size:.72rem;font-weight:700;color:var(--accent);letter-spacing:.06em}
+
+/* rehearsal */
+.qcard{border:1px solid var(--line);border-radius:14px;padding:16px;margin-bottom:12px;
+  background:#fff;cursor:pointer;user-select:none}
+.qcard .q{font-family:"Gowun Batang",serif;font-size:1rem;line-height:1.5}
+.qcard .hint{font-size:.75rem;color:var(--ink-soft);margin-top:8px}
+.qcard .ans{display:none;margin-top:12px;border-top:1px dashed var(--line);padding-top:12px}
+.qcard.open .ans{display:block}
+.qcard.open .hint{display:none}
+.toolbar{display:flex;gap:8px;margin-bottom:14px}
+.toolbar button{flex:1;border:1px solid var(--line);background:#fff;border-radius:10px;
+  padding:9px 0;font-size:.83rem;font-weight:600;color:var(--ink);cursor:pointer;font-family:inherit}
+
+/* expo table */
+.kv{width:100%;border-collapse:collapse;font-size:.87rem}
+.kv td{padding:8px 0;border-bottom:1px solid var(--line);vertical-align:top}
+.kv td:first-child{color:var(--ink-soft);width:34%}
+.kv tr:last-child td{border-bottom:0}
+.tbd{color:var(--danger);font-weight:700}
+
+/* checklist */
+.ck{display:flex;gap:10px;align-items:flex-start;padding:9px 0;border-bottom:1px solid var(--line);font-size:.88rem}
+.ck:last-child{border-bottom:0}
+.ck input{margin-top:4px;accent-color:var(--accent);width:16px;height:16px}
+.ck label{flex:1}
+.ck input:checked + label{color:var(--ink-soft);text-decoration:line-through}
+
+/* bottom nav */
+nav{position:fixed;left:0;right:0;bottom:0;z-index:30;background:#fff;
+  border-top:1px solid var(--line);display:flex;
+  padding-bottom:env(safe-area-inset-bottom)}
+nav button{flex:1;border:0;background:none;padding:9px 0 8px;cursor:pointer;
+  font-family:inherit;color:var(--ink-soft);font-size:.68rem;font-weight:600;
+  display:flex;flex-direction:column;align-items:center;gap:2px}
+nav button .dot{width:5px;height:5px;border-radius:99px;background:transparent}
+nav button.on{color:var(--accent)}
+nav button.on .dot{background:var(--accent)}
+nav button .t{font-size:1.05rem;line-height:1}
+footer{max-width:560px;margin:0 auto;padding:0 18px 24px;font-size:.72rem;color:var(--ink-soft)}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="brand">SOROCI</div>
+  <div class="tagline">현장 가이드 · Breathe Comfortably</div>
+</header>
+
+<main id="app"></main>
+
+<footer id="ver"></footer>
+
+<nav id="nav"></nav>
+
+<script>
+/* ============================================================
+   ① 전시회 모듈 — 전시마다 여기만 수정
+   ============================================================ */
+const EXPO = {
+  name: "Beautyworld Middle East 2026",
+  city: "두바이",
+  venue: "Dubai World Trade Centre",
+  dates: "2026. 10. 06 (화) – 10. 08 (목)",
+  hall: "스킨케어관 (Cosmetics & Skincare)",
+  booth: "",                       // 확정 시 입력 (예: "3-B22"). 비우면 '미정' 표시
+  interpreterDays: "10/6 – 10/8, 영어 ↔ 한국어",
+  salesPolicy: "unconfirmed",      // "unconfirmed" | "sell" | "giveaway"
+  priceNote: "판매 확정 시: 정가의 약 50%, USD 정수 단위(10, 20…)로 라운딩",
+  qtyGuide: [
+    ["일반 제품", "품목당 5개"],
+    ["인기 제품 (Water Drop, Calming Cream, 세럼류, 아이크림)", "품목당 7 – 10개"],
+    ["마스크팩", "다량 (이벤트·증정용)"]
+  ],
+  sampleTiers: [
+    ["단순 방문", "카탈로그만 제공"],
+    ["일반 바이어", "마스크팩 등 소형 1개 — 명함 교환 필수"],
+    ["핵심 바이어", "라인별 정품 1 – 2개 증정 + 심층 상담"]
+  ],
+  version: "v0.1 · 2026-08 작성"
+};
+
+/* ============================================================
+   ② 코어 데이터 — 브랜드/제품 (전시가 바뀌어도 유지)
+   ============================================================ */
+const PILLARS = [
+  {ico:"🏭", t:"100% 자체 제조 (In-House)",
+   en:"Directly manufactured in-house — from raw material extraction to packaging.",
+   kr:"원료 추출부터 포장까지 자체 공장 원스톱 생산. 완벽한 품질 관리와 뛰어난 단가 경쟁력."},
+  {ico:"⭐", t:"북미 소비자 검증 (2M+)",
+   en:"Selected by IPSY 8+ times. Voted Top Moisturizer & Eye Cream by 300K+ US blind testers.",
+   kr:"IPSY 8회 이상 선정. 미국 30만 명 블라인드 테스터가 뽑은 보습·아이크림 1위. 런칭 후 누적 200만 명 이상에게 전달."},
+  {ico:"✨", t:"독자 제형 & 편안한 사용감",
+   en:"Proprietary formula: fast-absorbing, deep hydration, comfortable adherence — for sensitive skin.",
+   kr:"직접 제조로 완성한 민감성 특화 제형. ① 끈적임 없는 빠른 흡수 ② 겉돌지 않는 고보습 ③ 완벽한 피부 밀착."}
+];
+
+const STORY = [
+  ["시작", "피부 유익균(마이크로바이옴) 연구가 브랜드의 과학적 토대가 됨"],
+  ["검증", "오리지널 이제(EEJE) 솝, 4,500명 임상 시험으로 입증"],
+  ["런칭", "오가닉 라이스 라인과 함께 SOROCI 데뷔"],
+  ["북미 진출", "미국 사이트 오픈 — 누적 200만 명 이상의 소비자에게 전달"],
+  ["확장", "북미 · 유럽 · 중동 · 아시아 전역으로 리테일 확장"]
+];
+
+const MATCH = [
+  ["민감성 / 트러블", "Derma Lab 또는 Organic Rice"],
+  ["브라이트닝", "Vita Tangerine (Vita-C Serum 강조)"],
+  ["안티에이징", "Morning Drizzle"],
+  ["기초 풀라인", "Organic Rice"],
+  ["두피 / 헤어", "Marine Bio"],
+  ["검증된 베스트셀러", "Water Drop · Tangerine Serum · Vita-C Serum"]
+];
+
+const COMBOS = [
+  ["브라이트닝 집중", "Vita-C Serum + Organic Rice 기초 (토너 · 로션)"],
+  ["민감 + 보습", "Derma Lab 클렌저 + Morning Drizzle Calming Cream"],
+  ["안티에이징 루틴", "Morning Drizzle 보습 + Spotlight Eye Cream"],
+  ["트러블 케어", "Derma Lab 풀케어 + NMF Serum"]
+];
+
+const FLOW = [
+  {s:"STEP 1", t:"첫인사 (Hook)", g:"지나가는 바이어의 발걸음을 멈추게 하는 10초 피치",
+   en:"Hi, we're SOROCI — a premium skincare brand from Korea. We manufacture everything in-house, from extraction to packaging.",
+   kr:"SOROCI입니다. 원료 추출부터 포장까지 100% 자체 제조하는 K-뷰티 브랜드입니다."},
+  {s:"STEP 2", t:"니즈 파악 (Questioning)", g:"바이어의 타겟 고객층과 관심 카테고리 파악",
+   en:"What kind of products are you looking for? Who is your main customer — sensitive skin, anti-aging, brightening?",
+   kr:"어떤 제품 찾고 계세요? 주요 고객층이 어떻게 되세요?"},
+  {s:"STEP 3", t:"맞춤 제안 (Matching)", g:"니즈에 따라 5개 라인 중 매칭 제안 (아래 매칭표 참고)",
+   en:"Based on your needs, I'd recommend our [Line Name]. For brightening, our new Vita-C Intensive Serum is a great fit.",
+   kr:"니즈에 맞춰 [라인명]을 추천합니다."},
+  {s:"STEP 4", t:"실적 펀치 (Proof)", g:"바이어 성향에 따라 택 1 — 유통형은 IPSY, 제품력형은 제형",
+   en:"Tested by over 300,000 US consumers — voted Top Moisturizer & Best Eye Cream on IPSY. / Because we manufacture in-house, our formula offers fast absorption, deep hydration, and perfect adherence.",
+   kr:"유통·리테일 바이어 → 미국 30만 명 검증 실적 강조 / 제품력 관심 바이어 → 독자 제형 3가지 강조."},
+  {s:"STEP 5", t:"클로징 (Next Step)", g:"명함 확보 + 샘플 발송 약속",
+   en:"Can I get your business card for follow-up? Would you like us to send some samples?",
+   kr:"연락처 받을 수 있을까요? 샘플 보내드릴까요?"}
+];
+
+const FAQS = [
+  {must:true, q:"What does SOROCI mean?", t:"SOROCI가 무슨 뜻인가요?",
+   en:"SOROCI comes from a Korean word meaning 'purity.' It reflects our principle, 'Breathe Comfortably' — skincare pure and gentle enough to let your skin breathe.",
+   kr:"SOROCI는 '순수함'을 뜻하는 한국어에서 온 이름입니다. '편안하게 숨 쉬다(Breathe Comfortably)'라는 원칙처럼, 피부가 편안하게 숨 쉴 만큼 순수한 스킨케어를 지향합니다."},
+  {must:true, q:"Do you have your own factory?", t:"자체 공장이 있나요?",
+   en:"Yes. We have our own R&D center and manufacturing facility. From raw material extraction to filling and packaging — it's all done in-house. That's how we control quality and keep pricing competitive.",
+   kr:"네, 자체 R&D 센터와 제조 시설을 보유하고 있습니다. 원료 추출부터 충진, 포장까지 100% In-house로 진행합니다."},
+  {must:true, q:"What makes SOROCI different?", t:"가장 큰 차별점은?",
+   en:"Our proprietary formulation. Because we manufacture in-house, we've perfected a formula that absorbs quickly without stickiness, provides deep hydration, and adheres perfectly to the skin — specifically for sensitive skin.",
+   kr:"직접 제조하기에 가능한 독자 제형입니다. ① 끈적임 없는 빠른 흡수 ② 겉돌지 않는 고보습 ③ 완벽한 피부 밀착."},
+  {must:true, q:"What's your lead time?", t:"리드타임은?",
+   en:"Typically 2–3 weeks from order confirmation, since we manufacture everything in-house.",
+   kr:"자체 제조라 주문 확정 후 보통 2~3주 내 출고 가능합니다."},
+  {must:true, q:"What's your MOQ?", t:"MOQ는?",
+   en:"It depends on the product and order size. Let's discuss specifics after the show — I can send you a detailed proposal with pricing tiers.",
+   kr:"제품과 물량에 따라 다릅니다. 전시 후 구체적 제안서를 보내드립니다. (단가·MOQ는 바이어가 먼저 물을 때만 대응)"},
+  {must:true, q:"How's your track record in the US?", t:"미국 시장 실적은?",
+   en:"We've been selected by IPSY 8+ times. Our products have been tested and chosen by hundreds of thousands of real US consumers — not just distributed, but genuinely loved.",
+   kr:"IPSY 8회 이상 선정. 수십만 명의 실제 미국 소비자 블라인드 테스트에서 카밍크림·아이크림이 1위로 꼽혔습니다."},
+  {must:false, q:"Do you offer OEM/ODM?", t:"OEM/ODM 가능한가요?",
+   en:"We don't do full OEM/ODM, but we do offer private label — same formula, with minor customizations like scent or concentration ratio.",
+   kr:"완전한 OEM/ODM은 어렵지만, 기존 처방 기반 소폭 커스터마이징(향·배합비)한 프라이빗 라벨은 가능합니다."},
+  {must:false, q:"Are your products EU-registered (CPNP)?", t:"유럽 인증(CPNP)은?",
+   en:"Yes, 15 out of our 23 products are already CPNP registered. We can provide all necessary EU compliance documents.",
+   kr:"총 23개 품목 중 15개 품목 CPNP 등록 완료. EU 규정 서류 즉시 제공 가능합니다."},
+  {must:false, q:"What's new?", t:"신제품은?",
+   en:"Our Vita-C Intensive Serum — a Triple Vitamin C Complex for brightening, anti-aging, and hydration. Gentle enough for sensitive skin, clinically tested.",
+   kr:"Vita-C Intensive Serum. 트리플 비타민C 복합체로 브라이트닝·안티에이징·보습을 동시에. 최근 IPSY 입점."},
+  {must:false, q:"Can we get exclusivity?", t:"독점 공급 가능한가요?",
+   en:"We do have partners in a few countries, but we're actively looking for stronger, more committed partners in most regions. If the volume works, exclusivity is definitely on the table.",
+   kr:"지역과 연간 보장 물량에 따라 논의 가능합니다. 더 강한 파트너십을 원하는 지역은 언제든 열려 있습니다."}
+];
+
+const LINES = [
+  {cls:"l-rice", name:"Organic Rice", kr:"오가닉 라이스", n:"7종",
+   pos:"기초 스킨케어 풀라인 · 모든 피부 타입 · 브라이트닝",
+   key:"쌀눈 (Rice Germ) — 쌀 전체 영양의 66% 집약",
+   en:"Our original line — gentle enough for the most sensitive skin. Includes a BB cream with a patented natural pigment.",
+   skus:[
+     ["Soothing Skin Toner","","세안 후 pH 밸런스, 피부결 정돈"],
+     ["Repair Skin Softener","","밀키 텍스처, 건조 피부 영양 공급"],
+     ["Mild Lotion","","산뜻한 고보습, 세라마이드 함유"],
+     ["NMF Serum","","천연보습인자(NMF), 여드름 피부 OK"],
+     ["Calming Essence","","즉각 수분, 민감 피부 진정"],
+     ["Recovery BB Cream","HERO","천연 색소 특허, 자연스러운 커버"],
+     ["Protection Sun Cream","","저자극 자외선 차단"]
+   ],
+   note:"소로시 첫 런칭 라인. 7종 풀라인으로 바이어 매대 구성 용이. BB크림은 황토 기반 천연 색소 특허 보유."},
+  {cls:"l-drizzle", name:"Morning Drizzle", kr:"모닝 드리즐", n:"3종",
+   pos:"보습 · 항산화 · 안티에이징 — IPSY 베스트셀러",
+   key:"아로니아 (King's Berry) — 비타민C 대비 20배 항산화",
+   en:"Our best-selling line in the US, proven by hundreds of thousands of IPSY consumers.",
+   skus:[
+     ["Water Drop Moisturizer","IPSY","물방울 텍스처, 24시간 보습, 30만 테스터 검증"],
+     ["Calming Cream","HERO","K-뷰티 보습 최상위권, 진정+보습 동시"],
+     ["Bucket Mist","","아로니아 항산화 미스트, 메이크업 위에도 OK"]
+   ],
+   note:"미국 프리미엄 보습 브랜드들과의 블라인드 테스트 최상위권. 정품 13만 개 수출 완료."},
+  {cls:"l-tang", name:"Vita Tangerine", kr:"비타 탠저린", n:"5종",
+   pos:"브라이트닝 · 색소침착 · 비타민C",
+   key:"제주 청귤 — 1년 중 4주만 수확, 고농축 비타민C",
+   en:"Vitamin C intensive line using Jeju Green Tangerine for brightening and anti-aging.",
+   skus:[
+     ["Vita-C Intensive Serum","NEW","트리플 비타민C, 최근 IPSY 입점, 브라이트닝+안티에이징"],
+     ["Toning Serum","","비타민C+베리 항산화, 브라이트닝"],
+     ["Low-Hyaluronic Booster Serum","HERO","잡티 개선, 저분자 히알루론산, 30만 테스터 검증"],
+     ["Spotlight Eye Cream","IPSY","IPSY 아이크림 1위, 다크서클 케어"],
+     ["Vita-Tangerine Fit Mask","","2단계 마스크, 즉각 브라이트닝"]
+   ],
+   note:"16.1만 개 샘플 배포 후 24시간 내 4.1만 명 추가 구매. 정품 15만 개 수출 완료."},
+  {cls:"l-marine", name:"Marine Bio", kr:"마린 바이오", n:"3종",
+   pos:"두피 · 헤어 케어 · 순한 각질 케어",
+   key:"해조류 & 후코이단 — 두피 자생력 강화",
+   en:"Scalp and hair care line with marine fucoidan technology.",
+   skus:[
+     ["Active Shampoo","","두피 클렌징 + 모근 영양"],
+     ["Active Hair Tonic","","두피 쿨링, 탈모 예방 케어"],
+     ["Fucoidan Peeling & Soothing Pad","HERO","2단계 패드, 각질 제거 후 진정"]
+   ],
+   note:""},
+  {cls:"l-derma", name:"Derma Lab", kr:"더마 랩", n:"4종",
+   pos:"여드름 · 민감성 · 예민해진 피부",
+   key:"오리엔탈 허브 + Derma Max AC Complex™ · 1999년부터 이어온 처방",
+   en:"Our dermacosmetic line — formulated since 1999, over 25 years of trouble-care expertise. Dermatologist tested, gentle enough for the most reactive skin.",
+   skus:[
+     ["Herbal Eeje Soap","HERO","1999년 오리지널 처방, 트러블 케어 원조 (4,500명 임상)"],
+     ["Herbal Calming Mist","","SOS 진정 미스트, 붉은기 즉각 완화"],
+     ["Herbal Soothing Toner Pad","","각질 정돈 + 진정 동시에"],
+     ["Intensive Foaming Cleanser","","약산성, 민감 피부 전용 클렌저"]
+   ],
+   note:"국내 피부과에 공급되는 라인 — 신뢰도 어필 포인트."}
+];
+
+const CHECK = [
+  "이해 — 브랜드 스토리 · 철학 · 3 Pillars 읽기",
+  "이해 — 5개 라인 개요 파악 (색으로 기억하기)",
+  "암기 — 10초 피치 입에 붙이기",
+  "암기 — 5-STEP 상담 플로우 숙지",
+  "암기 — 니즈별 라인 매칭표 외우기",
+  "암기 — 필수 FAQ 5개 영어로 답하기",
+  "리허설 — FAQ 셀프 체크 전체 1회전",
+  "리허설 — 담당자와 화상 롤플레이 (15–20분)",
+  "현장 — 샘플 배분 기준 · 운영 수칙 확인 (D-day)"
+];
+</script>
+<script>
+/* ============================================================
+   ③ 렌더링 — 아래는 구조/디자인 영역 (콘텐츠 수정 불필요)
+   ============================================================ */
+const $ = s => document.querySelector(s);
+const esc = t => t.replace(/&/g,"&amp;").replace(/</g,"&lt;");
+
+const TABS = [
+  {id:"home", label:"시작", ico:"🏠"},
+  {id:"learn", label:"이해", ico:"🌱"},
+  {id:"memo", label:"암기", ico:"💬"},
+  {id:"drill", label:"리허설", ico:"🎯"},
+  {id:"prod", label:"제품", ico:"🧴"},
+  {id:"field", label:"현장", ico:"📍"}
+];
+
+function boothText(){
+  return EXPO.booth ? EXPO.booth : '<span class="tbd">미정 — 확정 시 업데이트</span>';
+}
+function policyText(){
+  if(EXPO.salesPolicy==="sell") return "현장 판매 진행 — 아래 가격 기준 참고";
+  if(EXPO.salesPolicy==="giveaway") return "현장 판매 없음 — 샘플 증정 중심 운영";
+  return '<span class="tbd">확인 중</span> — 주최측 정책 확인 후 업데이트';
+}
+
+function pageHome(){
+  return `
+  <h2 class="sec">이 가이드 사용법</h2>
+  <p class="sub">${EXPO.name} · SOROCI 통역 파트너를 위한 자료입니다. 전부 외울 필요는 없어요 — 아래 3단계 순서대로만 따라와 주세요.</p>
+  <div class="journey">
+    <div class="stage"><div class="no serif">一</div><div>
+      <h3>이해</h3><p>브랜드가 어떤 회사인지 흐름만 파악합니다. 암기 X, 이해 O.</p>
+      <button class="go" data-go="learn">이해 탭으로 →</button></div></div>
+    <div class="stage"><div class="no serif">二</div><div>
+      <h3>암기</h3><p>현장에서 입으로 나와야 하는 문장만 모았습니다. 이것만은 꼭.</p>
+      <button class="go" data-go="memo">암기 탭으로 →</button></div></div>
+    <div class="stage"><div class="no serif">三</div><div>
+      <h3>리허설</h3><p>바이어 질문을 보고 스스로 답해본 뒤, 탭해서 모범답안과 비교합니다.</p>
+      <button class="go" data-go="drill">리허설 탭으로 →</button></div></div>
+  </div>
+  <div class="note">💡 제품 탭은 암기 대상이 아닙니다 — 현장에서 찾아보는 사전처럼 쓰세요. 궁금한 점이나 자주 받는 질문 중 빠진 게 있으면 언제든 알려주세요. 계속 업데이트됩니다.</div>
+
+  <h2 class="sec">전시 요약</h2>
+  <div class="card"><table class="kv">
+    <tr><td>전시회</td><td>${EXPO.name}</td></tr>
+    <tr><td>일정</td><td>${EXPO.dates}</td></tr>
+    <tr><td>장소</td><td>${EXPO.venue} · ${EXPO.hall}</td></tr>
+    <tr><td>부스</td><td>${boothText()}</td></tr>
+  </table></div>
+
+  <h2 class="sec">학습 체크리스트</h2>
+  <div class="card">
+    ${CHECK.map((c,i)=>`<div class="ck"><input type="checkbox" id="ck${i}"><label for="ck${i}">${c}</label></div>`).join("")}
+  </div>`;
+}
+
+function pageLearn(){
+  return `
+  <h2 class="sec">브랜드 한 줄</h2>
+  <p class="sub">SOROCI(소로시)는 '순수함'을 뜻합니다.</p>
+  <div class="card"><p style="color:var(--ink)">'Breathe Comfortably(편안하게 숨 쉬다)'라는 원칙 아래, 25년 제조 노하우 위에 세워진 한국 스킨케어 브랜드. 원료 선정부터 처방 설계, 자체 생산까지 전 과정에서 피부 본연의 균형을 살핍니다.</p></div>
+
+  <h2 class="sec">3 Pillars — 가장 먼저 각인시킬 3가지</h2>
+  <p class="sub">어떤 대화든 결국 이 3가지로 돌아옵니다.</p>
+  <div class="pillars">
+    ${PILLARS.map(p=>`<div class="pillar"><span class="ico">${p.ico}</span>
+      <h3>${p.t}</h3><div class="en">${p.en}</div><p class="kr">${p.kr}</p></div>`).join("")}
+  </div>
+
+  <h2 class="sec">IPSY가 뭐예요?</h2>
+  <p class="sub">3 Pillars와 FAQ에 계속 등장하는 이름이라 먼저 알아두면 좋습니다.</p>
+  <div class="card">
+    <p style="color:var(--ink)">IPSY는 미국 최대 규모의 뷰티 구독 서비스입니다. 매달 구독자의 피부 타입·취향에 맞춘 뷰티 박스(Glam Bag)를 보내주는데, 구독자가 수백만 명 규모예요.</p>
+    <p class="kr" style="margin-top:8px">브랜드가 IPSY에 선정되면 수십만 명의 실제 미국 소비자에게 제품이 전달되고 사용 후 평가를 받습니다. 광고가 아니라 실사용 기반 검증이라는 점이 핵심 — "미국 30만 명 블라인드 테스터"라는 실적이 여기서 나온 겁니다. SOROCI는 여기에 8회 이상 선정됐습니다.</p>
+    <div class="en">"IPSY is the largest beauty subscription service in the US — millions of subscribers receive personalized beauty boxes every month."</div>
+    <p class="kr">바이어가 IPSY를 모를 때 이 한 문장으로 설명하면 됩니다.</p>
+  </div>
+
+  <h2 class="sec">브랜드 스토리</h2>
+  <p class="sub">"스킨케어가 피부 본연의 생리와 함께 작동한다면?" 이라는 질문에서 시작했습니다.</p>
+  <div class="card">
+    ${STORY.map(s=>`<div class="sku"><div class="nm">${s[0]}</div><div class="ds">${s[1]}</div></div>`).join("")}
+  </div>
+
+  <h2 class="sec">철학 — Beyond Organic Prescription™</h2>
+  <div class="card"><p style="color:var(--ink)">단순히 '안전한' 성분을 고르는 데 그치지 않고, 성분의 순수성·호환성·시너지에 집중합니다. 모든 포뮬러가 피부에 거스르지 않고 피부와 함께 작동하도록 설계됩니다.</p></div>
+
+  <h2 class="sec">5개 라인, 색으로 기억하기</h2>
+  <p class="sub">이 가이드 전체에서 라인마다 같은 색을 씁니다.</p>
+  ${LINES.map(l=>`<div class="acc line ${l.cls}"><button>
+      <span class="line-chip">${l.kr}</span>${l.name} <span style="color:var(--ink-soft);font-weight:400;font-size:.8rem">· ${l.n}</span>
+    </button><div class="body">
+      <p><b>${l.pos}</b></p>
+      <p style="margin-top:4px">핵심 성분: ${l.key}</p>
+    </div></div>`).join("")}`;
+}
+
+function pageMemo(){
+  return `
+  <h2 class="sec">10초 피치 <span class="chip must">필수</span></h2>
+  <p class="sub">지나가는 바이어를 세우는 첫 문장. 이 한 문장은 무조건 외웁니다.</p>
+  <div class="card">
+    <div class="en">"Hi, we're SOROCI — a premium skincare brand from Korea. We manufacture everything in-house, from extraction to packaging."</div>
+    <p class="kr">SOROCI입니다. 원료 추출부터 포장까지 100% 자체 제조하는 K-뷰티 브랜드입니다.</p>
+  </div>
+
+  <h2 class="sec">5-STEP 상담 플로우</h2>
+  <p class="sub">순서가 무기입니다: 세우고 → 묻고 → 맞추고 → 증명하고 → 남긴다.</p>
+  ${FLOW.map(f=>`<div class="acc step"><button><span class="lbl">${f.s}</span><br>${f.t}</button>
+    <div class="body"><p class="kr" style="margin-bottom:6px">목적: ${f.g}</p>
+    <div class="en">${f.en}</div><p class="kr">${f.kr}</p></div></div>`).join("")}
+
+  <h2 class="sec">니즈별 라인 매칭표 <span class="chip must">필수</span></h2>
+  <p class="sub">STEP 3에서 바로 꺼내 쓰는 첫 추천 기준. 정답표가 아니라 시작점입니다.</p>
+  <div class="card"><table class="kv">
+    ${MATCH.map(m=>`<tr><td>${m[0]}</td><td><b>${m[1]}</b></td></tr>`).join("")}
+  </table></div>
+  <div class="note">💡 원칙: 니즈가 겹치거나 애매하면 히어로 제품 기준으로 먼저 추천하고, 조합 제안은 그 다음. 라인이 겹치는 건 약점이 아니라 "같이 팔기 좋다"는 세일즈 포인트입니다.</div>
+  <div class="card" style="margin-top:12px">
+    <h3>겹칠 때 쓰는 한 문장</h3>
+    <div class="en">"All five lines share the same formulation philosophy, so they layer beautifully together — most of our customers mix lines in one routine."</div>
+    <p class="kr">다섯 라인이 같은 처방 철학을 공유해서 함께 레이어링하기 좋습니다. 실제 소비자도 라인을 조합해 씁니다.</p>
+  </div>
+  <div class="card">
+    <h3>대표 조합 예시</h3>
+    <table class="kv">
+    ${COMBOS.map(c=>`<tr><td>${c[0]}</td><td>${c[1]}</td></tr>`).join("")}
+    </table>
+  </div>
+  <div class="card">
+    <h3>깊은 성분·처방 질문이 오면</h3>
+    <div class="en">"Let me bring our founder — he formulated these himself."</div>
+    <p class="kr">상세한 처방 상담은 담당자(형)에게 토스하면 됩니다. 25년 R&D 스토리를 자연스럽게 보여줄 기회이니 부담 갖지 마세요.</p>
+  </div>
+
+  <h2 class="sec">필수 FAQ <span class="chip must">필수</span></h2>
+  <p class="sub">현장에서 가장 자주 나오는 질문. 영어 답이 바로 나와야 합니다. 전체 연습은 리허설 탭에서.</p>
+  ${FAQS.filter(f=>f.must).map(f=>`<div class="acc"><button>${f.t} <span style="color:var(--ink-soft);font-weight:400;font-size:.8rem">· ${esc(f.q)}</span></button>
+    <div class="body"><div class="en">${esc(f.en)}</div><p class="kr">${f.kr}</p></div></div>`).join("")}`;
+}
+
+let drillOrder = FAQS.map((_,i)=>i);
+function pageDrill(){
+  return `
+  <h2 class="sec">바이어 FAQ 셀프 체크</h2>
+  <p class="sub">질문을 보고 먼저 소리 내어 답해보세요. 그다음 카드를 탭해 모범답안과 비교합니다.</p>
+  <div class="toolbar">
+    <button id="shuffleBtn">🔀 순서 섞기</button>
+    <button id="resetBtn">↺ 모두 닫기</button>
+  </div>
+  ${drillOrder.map(i=>{const f=FAQS[i];return `<div class="qcard" data-q>
+    <div class="q">Q. ${esc(f.q)}</div>
+    <div class="hint">탭해서 모범답안 보기 ${f.must?'· <span class="chip must" style="font-size:.62rem">필수</span>':''}</div>
+    <div class="ans"><div class="en">${esc(f.en)}</div><p class="kr">${f.kr}</p></div>
+  </div>`}).join("")}
+  <div class="note">💡 전체 1회전을 마쳤다면, 담당자와 화상으로 짧은 롤플레이(15–20분)를 진행합니다. 담당자가 바이어 역할로 무작위 질문을 던집니다.</div>`;
+}
+
+function pageProd(){
+  return `
+  <h2 class="sec">제품 레퍼런스</h2>
+  <p class="sub">암기용이 아닌 검색용 사전입니다. 가격·수량 등 현장 조건은 '현장' 탭 기준.</p>
+  ${LINES.map(l=>`<div class="acc line ${l.cls}"><button>
+      <span class="line-chip">${l.kr}</span>${l.name} <span style="color:var(--ink-soft);font-weight:400;font-size:.8rem">· ${l.n}</span>
+    </button><div class="body">
+      <div class="en">${esc(l.en)}</div>
+      <p class="kr" style="margin-bottom:4px">핵심 성분: ${l.key}</p>
+      ${l.skus.map(s=>`<div class="sku"><span class="nm">${s[0]}</span>${s[1]?`<span class="tag">${s[1]}</span>`:""}<div class="ds">${s[2]}</div></div>`).join("")}
+      ${l.note?`<div class="note">💡 내부 참고: ${l.note}</div>`:""}
+    </div></div>`).join("")}`;
+}
+
+function pageField(){
+  return `
+  <h2 class="sec">전시 정보</h2>
+  <div class="card"><table class="kv">
+    <tr><td>전시회</td><td>${EXPO.name}</td></tr>
+    <tr><td>일정</td><td>${EXPO.dates}</td></tr>
+    <tr><td>장소</td><td>${EXPO.venue}</td></tr>
+    <tr><td>구역</td><td>${EXPO.hall}</td></tr>
+    <tr><td>부스</td><td>${boothText()}</td></tr>
+    <tr><td>통역</td><td>${EXPO.interpreterDays}</td></tr>
+  </table></div>
+
+  <h2 class="sec">샘플 배분 기준</h2>
+  <p class="sub">기준은 하나 — 명함 없는 샘플은 없다.</p>
+  <div class="card"><table class="kv">
+    ${EXPO.sampleTiers.map(t=>`<tr><td>${t[0]}</td><td>${t[1]}</td></tr>`).join("")}
+  </table></div>
+
+  <h2 class="sec">준비 수량 가이드</h2>
+  <div class="card"><table class="kv">
+    ${EXPO.qtyGuide.map(t=>`<tr><td>${t[0]}</td><td>${t[1]}</td></tr>`).join("")}
+  </table></div>
+
+  <h2 class="sec">현장 판매 정책</h2>
+  <div class="card">
+    <p style="color:var(--ink)">${policyText()}</p>
+    <p class="kr" style="margin-top:6px">${EXPO.priceNote}</p>
+  </div>
+
+  <h2 class="sec">현장 팁</h2>
+  <div class="card">
+    <div class="sku"><div class="nm">명함은 즉시 메모 📝</div><div class="ds">받는 즉시 상대의 특징·대화 내용을 짧게라도 적기. 나중엔 기억이 안 납니다.</div></div>
+    <div class="sku"><div class="nm">식사 및 자리 비움 🍱</div><div class="ds">바이어가 언제 올지 모르니 교대로 부스 안쪽에서 간단히 식사.</div></div>
+    <div class="sku"><div class="nm">단가·MOQ 대응 원칙</div><div class="ds">바이어가 먼저 물을 때만 답합니다. 구체 조건은 "전시 후 제안서 발송"으로 클로징.</div></div>
+    <div class="sku"><div class="nm">가이드 활용법 🎯</div><div class="ds">이 가이드는 참고용입니다. 핵심만 짚고 본인 스타일로 자연스럽게 응대해 주세요. 파이팅!</div></div>
+  </div>`;
+}
+
+const PAGES = {home:pageHome, learn:pageLearn, memo:pageMemo, drill:pageDrill, prod:pageProd, field:pageField};
+let current = "home";
+
+function render(id){
+  current = id;
+  $("#app").innerHTML = `<div class="page on">${PAGES[id]()}</div>`;
+  document.querySelectorAll("nav button").forEach(b=>b.classList.toggle("on", b.dataset.tab===id));
+  window.scrollTo({top:0});
+  bind();
+}
+
+function bind(){
+  document.querySelectorAll(".acc>button").forEach(b=>{
+    b.onclick = ()=> b.parentElement.classList.toggle("open");
+  });
+  document.querySelectorAll("[data-go]").forEach(b=>{
+    b.onclick = ()=> render(b.dataset.go);
+  });
+  document.querySelectorAll("[data-q]").forEach(c=>{
+    c.onclick = ()=> c.classList.toggle("open");
+  });
+  const sh = $("#shuffleBtn");
+  if(sh) sh.onclick = ()=>{
+    for(let i=drillOrder.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[drillOrder[i],drillOrder[j]]=[drillOrder[j],drillOrder[i]];}
+    render("drill");
+  };
+  const rs = $("#resetBtn");
+  if(rs) rs.onclick = ()=> document.querySelectorAll("[data-q]").forEach(c=>c.classList.remove("open"));
+}
+
+$("#nav").innerHTML = TABS.map(t=>
+  `<button data-tab="${t.id}"><span class="t">${t.ico}</span>${t.label}<span class="dot"></span></button>`).join("");
+document.querySelectorAll("nav button").forEach(b=> b.onclick = ()=> render(b.dataset.tab));
+$("#ver").textContent = "SOROCI 현장 가이드 · " + EXPO.version;
+render("home");
+</script>
+</body>
+</html>
